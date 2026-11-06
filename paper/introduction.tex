@@ -1,0 +1,214 @@
+\section{The three questions and their attribution}\label{sec:introduction}
+
+A set \(A\subseteq\N=\{1,2,\ldots\}\) has \emph{Property P} if there
+are no pairwise distinct elements \(a,b,c\in A\) such that
+\[
+ a<b,\qquad a<c,\qquad a\mid b+c.
+\]
+In particular, equality of the two larger summands is permitted by the
+formulation and does not constitute a forbidden triple. Write
+\(A(N)=|A\cap\{1,\ldots,N\}|\).
+Erd\H{o}s Problem~12 asks three separate questions about the counting
+function and reciprocal sum of such an infinite set.
+
+\begin{theorem}[Part (i), AlphaProof Nexus]\label{thm:part-i}
+There is an infinite set \(A\) with Property P such that
+\[
+ \liminf_{N\to\infty}\frac{A(N)}{\sqrt N}>0.
+\]
+\end{theorem}
+
+\begin{theorem}[Part (ii), AlphaProof Nexus]\label{thm:part-ii}
+There is no absolute \(c>0\) such that every infinite set \(A\) with
+Property P satisfies \(A(N)<N^{1-c}\) for infinitely many \(N\).
+More precisely, for each \(0<c<1\) there are an infinite set \(A_c\)
+with Property P and an integer \(N_c\) such that
+\begin{equation}\label{eq:parameterwise-dense}
+ A_c(N)\ge N^{1-c}\qquad(N\ge N_c).
+\end{equation}
+The set and the threshold may depend on \(c\).
+\end{theorem}
+
+\begin{theorem}[Part (iii), with a uniform bound]\label{thm:main}
+There is an absolute constant \(C\) such that every set
+\(A\subseteq\N\) with Property P satisfies
+\begin{equation}\label{eq:main}
+ \hrec(A):=\sum_{a\in A}\frac1a\le C.
+\end{equation}
+The same constant applies to finite and infinite sets.
+\end{theorem}
+
+The answers to the three numbered questions are therefore, respectively,
+\emph{yes}, \emph{no}, and \emph{yes}. The first two answers are prior
+results of the Google DeepMind AlphaProof Nexus work of Tsoukalas,
+Kovsharov, Shirobokov et al.\ \cite{TKS}. They are included here with
+attribution, exposition, and adaptations of the released Lean proofs
+\cite{NexusI,NexusII}; they are not contributions first obtained in this
+manuscript. The reciprocal-sum argument of Theorem~\ref{thm:main} is the
+argument developed in the original manuscript by the four named authors.
+The present version brings the three statements into one account and one
+checked Lean source file.
+
+The quantifier order in \eqref{eq:parameterwise-dense} matters:
+\(\forall c\,\exists A_c\,\exists N_c\). We use precisely this
+parameterwise assertion. The construction below does not assert that one
+fixed set works for every \(c\). The lower bounds in part (ii) are
+compatible with the uniform reciprocal bound in part (iii): the onset
+\(N_c\) and the set itself vary with the exponent.
+
+Erd\H{o}s and S\'ark\"ozy \cite{ES} proved that every infinite set with
+Property P has density zero, and formulated the reciprocal-sum problem
+and its stronger uniform version. For the counting questions,
+Section~\ref{sec:counting} follows the congruence-block constructions in
+the released AlphaProof Nexus Lean files. Those are the concrete proof
+instances incorporated in the companion formalization. The constructions
+are presented here directly, rather than by relying on admitted statements
+in the Formal Conjectures catalog.
+
+The proof of part (iii) has three main steps. A quantitative
+incompatibility between separated blocks of rough elements is combined
+with sieve estimates to control prime fibres carrying inherited congruence
+restrictions. We then represent reciprocal sums by random prime-factor
+prefix weights. An adapted rule for selecting the restrictions gives a
+uniform total expected weight. The restriction estimate is a special case
+of Bera--Viswanadham \cite{BV}; Section~\ref{sec:restriction} includes a
+direct proof in the form needed here. The Mertens prefix weights are
+classical; see Alexeev et al.\ \cite{AB}. Earlier work of Plasma AI
+\cite{Plasma} contains the reduction to odd primitive sets, restricted
+reciprocal-sum estimates, and the problem of controlling accumulated
+congruence restrictions. These attributions apply to the reciprocal-sum
+argument, independently of the provenance of parts (i) and (ii).
+
+\subsection*{Notation and conventions}
+All logarithms are natural unless a base is indicated.
+We write \(\e(t)=\exp(2\pi i t)\), and \(\norm{t}_{\T}\) for distance
+from a real number to the nearest integer. The constants implicit in
+\(\ll\) and \(\asymp\) are absolute unless a dependence is indicated.
+An integer is \emph{\(D\)-rough} if no prime factor is at most \(D\),
+and \emph{\(D\)-smooth} if every prime factor is at most \(D\).
+The integer 1 satisfies both conventions. We write \(\Pmax(g)\) for
+the largest prime factor of \(g>1\), with \(\Pmax(1)=1\).
+A set is \emph{primitive} if no two distinct members divide one another.
+Property P is inherited by subsets and by division by a common divisor.
+The paper uses positive integers; the Lean statements use natural numbers,
+with \(1/0=0\). The constructions below consist of positive integers.
+
+\section{The counting constructions: parts (i) and (ii)}\label{sec:counting}
+
+This section is an attributed exposition of the released proofs
+\cite{NexusI,NexusII}. We isolate the common congruence argument and then
+make the two choices of scale. Omitting finitely many initial blocks in
+the exposition simplifies the estimates and does not affect the asserted
+asymptotic statements. The Lean implementations verify explicit initial
+bounds as well.
+
+\begin{lemma}[Congruence separation]\label{lem:congruence-separation}
+Let \(B_j\) be finite sets of positive integers, with every element of
+\(B_i\) smaller than every element of \(B_j\) when \(i<j\). Suppose that
+there are pairwise distinct primes \(q_j>2\) such that elements of
+\(B_j\) are \(0\pmod{q_j}\) and \(1\pmod{q_i}\) for every \(i<j\).
+If each \(B_j\) lies in an interval \([L_j,U_j]\) with
+\(2U_j<3L_j\), then \(\bigcup_j B_j\) has Property P.
+\end{lemma}
+\begin{proof}
+Suppose \(a\in B_i\), \(a<b,c\), and \(a\mid b+c\).
+If either larger element lies in a later block, then \(b+c\) is
+\(1\) or \(2\pmod{q_i}\), whereas \(a\equiv0\pmod{q_i}\).
+This is impossible because \(q_i>2\). Otherwise both larger elements
+lie in \(B_i\), and
+\(2a<b+c\le2U_i<3L_i\le3a\), which precludes divisibility.
+\end{proof}
+
+\subsection{A positive square-root lower limit}
+
+Choose increasing primes \(q_0,q_1,\ldots\), starting with \(q_0=5\),
+so that \(q_{j+1}\le2q_j+2\). Bertrand's postulate gives such a choice,
+and induction yields \(q_j+2\le7\cdot2^j\). Put
+\[
+ K_j=729\prod_{i<j}q_i,\qquad P_j=K_jq_j,\qquad M_j=P_j^8,
+ \qquad T_j=\left\lfloor\frac{P_{j+1}^4}{2}\right\rfloor.
+\]
+The Chinese remainder theorem supplies \(r_j\in[0,P_j)\) such that
+\(r_j\equiv1\pmod{K_j}\) and \(r_j\equiv0\pmod{q_j}\).
+Define
+\[
+ B_j=\{M_j+r_j+tP_j:0\le t<T_j\}.
+\]
+Then \(|B_j|=T_j\). Also \(P_{j+1}=P_jq_{j+1}\), while
+\(P_j\ge3645\cdot5^j\). Consequently
+\[
+ \frac{q_{j+1}^4}{P_j^3}\longrightarrow0,\qquad
+ \frac{T_jP_j}{M_j}\longrightarrow0.
+\]
+Thus, after removing finitely many initial blocks, each \(B_j\) lies
+in \([M_j,(7/5)M_j]\). The scales are strictly separated because
+\(M_{j+1}=M_jq_{j+1}^8\). The residues of \(B_j\) have the form in
+Lemma~\ref{lem:congruence-separation}, since \(q_i\mid K_j\) for
+\(i<j\). Their union \(A\) therefore has Property P.
+
+For large \(j\),
+\[
+ T_j=\tfrac12\sqrt{M_{j+1}}+O(1).
+\]
+If \(N\) falls inside the short interval containing \(B_j\), the
+preceding complete block contributes
+\(T_{j-1}=\tfrac12\sqrt{M_j}+O(1)\) elements. If \(N\) falls in the
+following gap, block \(B_j\) contributes
+\(T_j=\tfrac12\sqrt{M_{j+1}}+O(1)\) elements. These two cases give
+\[
+ A(N)\ge\tfrac13\sqrt N
+\]
+for every sufficiently large \(N\).
+To verify that the lower limit is finite as well, note that \(r_j>0\),
+so \(A(M_j)=\sum_{i<j}|B_i|\), up to the omitted finite prefix. Since
+\(P_{i+1}\le P_j5^{-(j-i-1)}\),
+\[
+ A(M_j)\le\frac12 P_j^4\sum_{k\ge0}5^{-4k}<P_j^4=\sqrt{M_j}.
+\]
+This proves Theorem~\ref{thm:part-i}. In particular, the lower limit is
+bounded away from zero and bounded above; this agrees with the real-valued
+lower-limit convention used by the Lean statement.
+
+\subsection{Failure of a universal power saving}
+
+Fix \(0<c<1\). Choose distinct odd primes \(p_j\) with
+\(p_j\le2^{j+2}\), and put \(Q_j=\prod_{i\le j}p_i\). Then
+\(Q_j\le2^{(j+2)^2}\). Choose an integer \(a\ge4\) with \(ac\ge3\),
+and define
+\[
+ M_j=2^{a(j+2a)^2}.
+\]
+Choose a residue \(s_j\pmod{Q_j}\) that is \(0\pmod{p_j}\) and
+\(1\pmod{p_i}\) for \(i<j\), and set
+\[
+ B_j=\{n\in[10M_j,14M_j]:n\equiv s_j\pmod{Q_j}\}.
+\]
+The intervals are disjoint and ordered because
+\(14M_j<10M_{j+1}\). They satisfy the strict width inequality in
+Lemma~\ref{lem:congruence-separation}. Once again their union \(A_c\)
+has Property P, and it is infinite because the blocks are nonempty for
+all sufficiently large \(j\).
+
+Counting a residue class in an interval gives
+\[
+ |B_j|\ge\frac{4M_j}{Q_j}-1.
+\]
+The logarithm to base 2 of \(4M_j/Q_j\) is at least
+\(2+a(j+2a)^2-(j+2)^2\), whereas
+\[
+ \log_2\bigl((14M_{j+1})^{1-c}\bigr)
+ =(1-c)\bigl(\log_2 14+a(j+1+2a)^2\bigr).
+\]
+The difference has leading term \((ac-1)j^2\), whose coefficient is
+positive. Therefore, for all sufficiently large \(j\),
+\[
+ |B_j|\ge(14M_{j+1})^{1-c}.
+\]
+For \(14M_j\le N<14M_{j+1}\), the complete block \(B_j\) is already
+counted in \(A_c(N)\). This proves \eqref{eq:parameterwise-dense}.
+If a universal saving \(d>0\) existed, apply the construction with
+\(c=\min(d,1/2)\). For sufficiently large \(N\ge1\),
+\(A_c(N)\ge N^{1-c}\ge N^{1-d}\), contradicting the required
+infinitely many strict inequalities. This proves
+Theorem~\ref{thm:part-ii}.
+

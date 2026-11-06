@@ -1,0 +1,144 @@
+\section{The single-file formalization and provenance}\label{sec:formalization}
+
+The companion file \texttt{Erdos12AllParts.lean} imports only Mathlib.
+It contains the local dependency closure of the reciprocal-sum argument
+and the two attributed AlphaProof Nexus proof developments. Its public
+interface is as follows.
+
+\begin{center}
+\begin{tabular}{p{0.22\textwidth}p{0.69\textwidth}}
+\hline
+Entry point & Mathematical statement\\
+\hline
+\texttt{part\_i} & A good infinite set has positive lower limit at square-root scale.\\[3pt]
+\texttt{part\_ii} & The universal power-saving assertion is false.\\[3pt]
+\texttt{part\_iii} & Every good infinite set has a convergent reciprocal sum.\\[3pt]
+\texttt{all\_parts} & The conjunction of the three preceding answers.\\[3pt]
+\texttt{parameterwise\_}\newline\texttt{dense} & The set and eventual counting threshold may depend on the exponent.\\[3pt]
+\texttt{uniform\_}\newline\texttt{reciprocal\_bound} & One constant bounds the reciprocal sum of every set with Property P.\\
+\hline
+\end{tabular}
+\end{center}
+All entry points belong to the namespace \texttt{Erdos12AllParts}.
+The definition \texttt{IsGood} retains the quantifiers and strict
+inequalities of the original Formal Conjectures statement.
+
+The check uses Lean \texttt{4.35.0-rc2} and Mathlib commit
+\nolinkurl{065356127b1dc0016f66b7283ce0ce2c4055aa55}.
+The prior proof files were taken from Google DeepMind's
+\texttt{alphaproof-nexus-results} repository at commit
+\nolinkurl{0647711a71183c1ea492ad60860776617ce1ea88}.
+They are distributed under the Apache License, Version 2.0, with
+copyright 2025 Google LLC. The companion file retains these notices and
+the license. Their original environment used Lean 4.27.0;
+the adaptation isolates their namespaces, removes redundant options and
+imports, updates the image-cardinality API, and expands the
+interval-residue counting lemma into a direct proof.
+
+The analytic formalization also retains the Euler--Maclaurin and
+Mertens developments from \texttt{PrimeNumberTheoremAnd}, obtained via
+\texttt{chen\_theorem}, and the vendored large-sieve development from
+\texttt{goldbach-lean} \cite{PNTCode,GoldbachCode}. Their recorded source
+revisions and attributions are preserved in the Lean header and the
+validation/provenance files; these components are likewise recorded under
+Apache License 2.0 in the supplied project.
+
+The final checks compile the combined source, check each public entry
+point, and inspect its axiom dependencies. The only axioms reported are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+The file introduces no admitted theorem and does not obtain the first
+two results by importing placeholder catalog declarations. A separate
+check compares all three endpoints with the pinned original catalog
+statements. The validation receipt records the source digest and commands.
+
+\section*{Acknowledgments and contribution statement}
+
+Parts (i) and (ii), including the constructions and the released formal
+proofs adapted here, are credited to the AlphaProof Nexus work of
+Google DeepMind and Tsoukalas, Kovsharov, Shirobokov et al.\ \cite{TKS}.
+The present manuscript supplies a unified exposition and the recorded
+adaptation to the pinned Lean environment. The four named authors retain
+responsibility for the reciprocal-sum argument, the integration, and the
+final mathematical claims.
+
+ChatGPT and Codex, developed by OpenAI, assisted with the mathematical
+development of the reciprocal-sum argument, checking calculations,
+literature searches, source integration, and manuscript preparation.
+The earlier reductions and analytic ingredients used in part (iii)
+are credited in the introduction and body of the proof.
+
+\begin{thebibliography}{99}
+
+\bibitem{AB}
+B. Alexeev, K. Barreto, Y. Li, J. D. Lichtman, L. Price,
+J. I. Shah, Q. Tang and T. Tao,
+\emph{Primitive sets and von Mangoldt chains: Erd\H{o}s Problem
+\#1196 and beyond},
+preprint (2026),
+\href{https://arxiv.org/abs/2605.00301v1}{arXiv:2605.00301v1}.
+
+\bibitem{BV}
+T. Bera and G. K. Viswanadham,
+\emph{Restriction estimates with sifted integers},
+preprint (2026),
+\href{https://arxiv.org/abs/2512.21640v3}{arXiv:2512.21640v3}.
+
+\bibitem{ES}
+P. Erd\H{o}s and A. S\'ark\"ozy,
+\emph{On the divisibility properties of sequences of integers},
+Proc. London Math. Soc. (3) \textbf{21} (1970), 97--101.
+\href{https://doi.org/10.1112/plms/s3-21.1.97}{doi:10.1112/plms/s3-21.1.97}.
+
+\bibitem{NexusI}
+Google DeepMind,
+\emph{AlphaProof Nexus results: Erd\H{o}s Problem 12(i)},
+Lean source (2026), Apache License, Version 2.0.
+Repository commit \nolinkurl{0647711a71183c1ea492ad60860776617ce1ea88}.
+\url{https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_12.parts.i.lean}.
+
+\bibitem{NexusII}
+Google DeepMind,
+\emph{AlphaProof Nexus results: Erd\H{o}s Problem 12(ii)},
+Lean source (2026), Apache License, Version 2.0.
+Repository commit \nolinkurl{0647711a71183c1ea492ad60860776617ce1ea88}.
+\url{https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_12.parts.ii.lean}.
+
+\bibitem{MV}
+H. L. Montgomery and R. C. Vaughan,
+\emph{\href{https://doi.org/10.1112/S0025579300004708}{The large sieve}},
+Mathematika \textbf{20} (1973), 119--134.
+
+\bibitem{MVbook}
+H. L. Montgomery and R. C. Vaughan,
+\emph{Multiplicative Number Theory I. Classical Theory},
+Cambridge Studies in Advanced Mathematics, vol.~97,
+Cambridge University Press, Cambridge, 2007.
+
+\bibitem{Plasma}
+Plasma AI,
+\emph{Composite-modulus large sieve for Property P},
+research notes, Erd\H{o}s Problems (2026),
+\href{https://erdosproblems.ai/wiki/research/leads/property_p_sieve_multiplicity}{online edition},
+accessed 4 November 2026.
+
+\bibitem{PNTCode}
+\emph{PrimeNumberTheoremAnd}, formalization project,
+\url{https://github.com/AlexKontorovich/PrimeNumberTheoremAnd},
+commit \nolinkurl{c6c73610b406689c4b58325cbe1342ecca25d755};
+retrieved through \url{https://github.com/lixiang90/chen_theorem},
+commit \nolinkurl{11dcca8fc3ab340358503278c46d72aef072a6e7}.
+
+\bibitem{GoldbachCode}
+\emph{goldbach-lean}, large-sieve formalization,
+\url{https://github.com/subfish-zhou/goldbach-lean},
+commit \nolinkurl{9d4c3a4010d42aedd9e7231bf94386019cfffccc}.
+
+\bibitem{TKS}
+G. Tsoukalas, A. Kovsharov, S. Shirobokov et al.,
+\emph{Advancing mathematics research with AI-driven formal
+proof search},
+preprint (2026),
+\href{https://arxiv.org/abs/2605.22763v2}{arXiv:2605.22763v2},
+Appendix~B.4.
+
+\end{thebibliography}

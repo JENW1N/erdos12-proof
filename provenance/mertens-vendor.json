@@ -1,0 +1,25 @@
+{
+  "retrieved_from": "https://github.com/lixiang90/chen_theorem",
+  "retrieved_commit": "11dcca8fc3ab340358503278c46d72aef072a6e7",
+  "original_project": "https://github.com/AlexKontorovich/PrimeNumberTheoremAnd",
+  "original_commit": "c6c73610b406689c4b58325cbe1342ecca25d755",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "path": "ChenTheorem/Analysis/PNT/EulerMaclaurin.lean",
+      "original_sha256": "f7b9fc30c9a3d3b3f48cda1ae2c67ee17746f40b83e25eb18951d029c15e595c",
+      "local_sha256": "f7b9fc30c9a3d3b3f48cda1ae2c67ee17746f40b83e25eb18951d029c15e595c"
+    },
+    {
+      "path": "ChenTheorem/Analysis/PNT/IEANTN/Mertens.lean",
+      "original_sha256": "a119ea83766b7e71f16d3551a70e8083dfd9fcf84a9466a8162354ee39d7f935",
+      "local_sha256": "76f265837489c12949bd76318a2ecaae78fb6425d8ba7a8697fed58b30640167"
+    }
+  ],
+  "verification_status": "Locally compiled; selected endpoints pass the transitive axiom audit",
+  "compatibility_changes": [
+    "Renamed Mathlib LogMeromorphic import to Integrability.Log",
+    "Renamed Set.mem_setOf_eq to Set.mem_ofPred_eq",
+    "Removed one redundant rfl after a closing simp"
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "part": "i",
+    "url": "https://raw.githubusercontent.com/google-deepmind/alphaproof-nexus-results/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_12.parts.i.lean",
+    "commit": "0647711a71183c1ea492ad60860776617ce1ea88",
+    "path": "APNOutputs/ErdosProblems/erdos_12.parts.i.lean",
+    "sha256": "c42238294d8d2d88ec752c5f293486a759b163412929dc4bc67d08702a499a59",
+    "license": "Apache-2.0",
+    "copyright": "Copyright 2025 Google LLC"
+  },
+  {
+    "part": "ii",
+    "url": "https://raw.githubusercontent.com/google-deepmind/alphaproof-nexus-results/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_12.parts.ii.lean",
+    "commit": "0647711a71183c1ea492ad60860776617ce1ea88",
+    "path": "APNOutputs/ErdosProblems/erdos_12.parts.ii.lean",
+    "sha256": "f155135c1e845cb3041abe20edce22e660c407b48620d696ea6325c75ae91b66",
+    "license": "Apache-2.0",
+    "copyright": "Copyright 2025 Google LLC"
+  }
+]

@@ -1,0 +1,120 @@
+--- upstream/erdos_12.parts.i.lean
++++ adapted/PriorI.lean
+@@ -1,3 +1,7 @@
++import Mathlib
++import FormalConjecturesUtil
++
++section
+ /-
+ Copyright 2025 Google LLC
+ 
+@@ -14,32 +18,18 @@
+ limitations under the License.
+ -/
+ 
+-import FormalConjectures.Util.ProblemImports
+-
+-set_option maxHeartbeats 0
+-set_option maxRecDepth 4000
+-set_option synthInstance.maxHeartbeats 20000
+-set_option synthInstance.maxSize 128
+-
+-set_option pp.fullNames true
+-set_option pp.structureInstances true
+-
+-set_option relaxedAutoImplicit false
+-set_option autoImplicit false
+-
+-set_option pp.coercions.types true
+-set_option pp.funBinderTypes true
+-set_option pp.letVarTypes true
+-set_option pp.piBinderTypes true
+-
+-set_option maxHeartbeats 200000
++
++
++
++
++
+ 
+ 
+ 
+ 
+ open Classical Filter Set
+ 
+-namespace Erdos12
++namespace Erdos12PriorI
+ 
+ /--
+ A set `A` is "good" if it is infinite and there are no distinct `a,b,c` in `A`
+@@ -49,7 +39,7 @@
+   ∀ᵉ (a ∈ A) (b ∈ A) (c ∈ A), a ∣ b + c → a < b →
+   a < c → b = c
+ 
+-open Erdos12
++open Erdos12PriorI
+ 
+ open MeasureTheory
+ 
+@@ -172,7 +162,7 @@
+ lemma m_le_of_lt {a b ma mb : ℕ} (ha : M ma ≤ a) (_ : a ≤ 2 * M ma)
+   (_ : M mb ≤ b) (hb2 : b ≤ 2 * M mb) (hab : a < b) : ma ≤ mb := by
+   by_contra h
+-  push_neg at h
++  push Not at h
+   have h1 : mb + 1 ≤ ma := h
+   have h2 : 2 * M mb < M (mb + 1) := M_increasing mb
+   have h3 : M (mb + 1) ≤ M ma := M_monotone h1
+@@ -475,7 +465,7 @@
+           omega
+         have hk_le : k ≤ 4 := by
+           by_contra h
+-          push_neg at h
++          push Not at h
+           have h_ak : a * 5 ≤ a * k := Nat.mul_le_mul_left a h
+           rw [← hk] at h_ak
+           have h_sum : b + c ≤ 4 * a := by omega
+@@ -483,7 +473,7 @@
+         have h_bc_gt_2a : 2 * a < b + c := by omega
+         have hk_ge : 3 ≤ k := by
+           by_contra h
+-          push_neg at h
++          push Not at h
+           have h_le_2 : k ≤ 2 := by omega
+           have h_ak : a * k ≤ a * 2 := Nat.mul_le_mul_left a h_le_2
+           rw [← hk] at h_ak
+@@ -875,7 +865,7 @@
+     exact hm0
+   have hm_ge_7 : 7 ≤ m := by
+     by_contra h
+-    push_neg at h
++    push Not at h
+     have h_le : m + 1 ≤ 7 := h
+     have h_M_le : M (m + 1) ≤ M 7 := M_monotone h_le
+     omega
+@@ -1052,7 +1042,7 @@
+ lemma g_block_spec {n : ℕ} (h : ∃ k, M k ≤ n ∧ n < M (k + 1)) :
+   M (g_block n) ≤ n ∧ n < M (g_block n + 1) := by
+   dsimp [g_block]
+-  rw [dif_pos h]
++  rw [dite_eq_left h]
+   exact Nat.find_spec h
+ 
+ lemma my_good_set_has_block {n : ℕ} (hn : n ∈ MyGoodSet) : ∃ k, M k ≤ n ∧ n < M (k + 1) := by
+@@ -1170,7 +1160,7 @@
+     Set.ncard_le_ncard h_sub (Finset.finite_toSet _)
+   have h_inj : Set.InjOn g_val (MyGoodSet ∩ Set.Icc 1 (M m)) :=
+     Set.InjOn.mono (fun x hx => hx.1) g_val_inj
+-  rw [Set.ncard_image_of_injOn h_inj] at h1
++  rw [h_inj.ncard_image] at h1
+   have h2 : (target_set m : Set (ℕ × ℕ)).ncard = (target_set m).card := finset_coe_ncard _
+   rw [h2] at h1
+   have h3 : (target_set m).card ≤ 2 * P m^4 := target_set_card m
+@@ -1235,3 +1225,7 @@
+   · intro _
+     trivial
+   -- EVOLVE-BLOCK-END
++
++end Erdos12PriorI
++
++end

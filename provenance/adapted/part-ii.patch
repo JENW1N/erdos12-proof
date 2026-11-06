@@ -1,0 +1,166 @@
+--- upstream/erdos_12.parts.ii.lean
++++ adapted/PriorII.lean
+@@ -1,3 +1,7 @@
++import Mathlib
++import FormalConjecturesUtil
++
++section
+ /-
+ Copyright 2025 Google LLC
+ 
+@@ -14,32 +18,18 @@
+ limitations under the License.
+ -/
+ 
+-import FormalConjectures.Util.ProblemImports
+-
+-set_option maxHeartbeats 0
+-set_option maxRecDepth 4000
+-set_option synthInstance.maxHeartbeats 20000
+-set_option synthInstance.maxSize 128
+-
+-set_option pp.fullNames true
+-set_option pp.structureInstances true
+-
+-set_option relaxedAutoImplicit false
+-set_option autoImplicit false
+-
+-set_option pp.coercions.types true
+-set_option pp.funBinderTypes true
+-set_option pp.letVarTypes true
+-set_option pp.piBinderTypes true
+-
+-set_option maxHeartbeats 200000
++
++
++
++
++
+ 
+ 
+ 
+ 
+ open Classical Filter Set
+ 
+-namespace Erdos12
++namespace Erdos12PriorII
+ 
+ /--
+ A set `A` is "good" if it is infinite and there are no distinct `a,b,c` in `A`
+@@ -49,7 +39,7 @@
+   ∀ᵉ (a ∈ A) (b ∈ A) (c ∈ A), a ∣ b + c → a < b →
+   a < c → b = c
+ 
+-open Erdos12
++open Erdos12PriorII
+ 
+ open MeasureTheory
+ 
+@@ -620,23 +610,75 @@
+   use x
+   exact ⟨⟨hx_ge, hx_le⟩, hx_mod⟩
+ 
+-lemma B_seq_ncard (M : ℕ → ℕ) (p : ℕ → ℕ) (C : ℕ → ℕ) (n : ℕ) (hM_len : 4 * M n ≥ P_n_def p n) (h_p_pos : P_n_def p n > 0) :
+-  (4 * M n / P_n_def p n - 1 : ℝ) ≤ (({ x ∈ Icc (10 * M n) (14 * M n) | x % (P_n_def p n) = C n % (P_n_def p n) } : Set ℕ).ncard : ℝ) := by
+-  trans↑((Finset.range (4 *M n/P_n_def p n)).image (@.* P_n_def p n+(C n+ Erdos12.P_n_def p n*( (10 *M n-(C n+ Erdos12.P_n_def p n *0))/0)))).card
+-  · use sub_le_iff_le_add.2 ((div_le_iff₀' (by bound)).2<|mod_cast le_of_lt (by simp_all[pos_iff_ne_zero, Finset.card_image_of_injective,Function.Injective,Nat.lt_mul_div_succ]))
+-  trans↑(Nat.card { a ∈ Finset.Icc (10*M n) (14*M n) | a% Erdos12.P_n_def p n = C n% Erdos12.P_n_def p n})
+-  · trans↑((Finset.range (4*M n/P_n_def p n)).image (.* Erdos12.P_n_def p n+(C n% Erdos12.P_n_def p n+10*M n% Erdos12.P_n_def p n))).card
+-    · repeat rw[ Finset.card_image_of_injOn fun and _ _ _=>Nat.mul_right_cancel h_p_pos ∘Nat.add_right_cancel]
+-    use Real.zero_lt_one.le.eq_or_lt.elim (by aesop) fun and=>Nat.card_eq_finsetCard _▸Real.zero_lt_one.le.eq_or_lt.elim (by aesop) ?_
+-    use fun and=>Nat.cast_le.2 ((Nat.card_eq_finsetCard _)▸((Nat.card_eq_finsetCard _)).symm▸ Finset.card_image_le.trans ( (( Finset.card_filter _ _).trans ( Finset.sum_Ico_eq_sum_range _ _ _)).ge.trans' ?_))
+-    use (by valid:14*M n+1-10*M n=4*M n+1).symm▸match R: Erdos12.P_n_def _ _ with|0=>by valid | S+1=>.trans (?_) (by rw [← Finset.card_filter])
+-    use Finset.card_le_card_of_injOn _ (fun a s=>? _) ((add_right_injective (C n-10*M n:ZMod (S+1)).val).comp (mul_right_injective₀ S.succ_ne_zero)).injOn
+-    norm_num[add_comm (ZMod.val _),←ZMod.val_natCast, mul_add, (ZMod.val_le), (Nat.mul_le_mul_left _ (List.mem_range.1 s)).trans (Nat.mul_div_le _ _)|>.trans',Nat.lt_succ]
+-  · exact (congr_arg (@ _) ((congr_arg _).comp (congr_arg _) (by. (norm_num)))).le
++lemma B_seq_ncard (M : ℕ → ℕ) (p : ℕ → ℕ) (C : ℕ → ℕ) (n : ℕ)
++    (_hM_len : 4 * M n ≥ P_n_def p n) (h_p_pos : P_n_def p n > 0) :
++    (4 * M n / P_n_def p n - 1 : ℝ) ≤
++      (({x ∈ Icc (10 * M n) (14 * M n) |
++          x % P_n_def p n = C n % P_n_def p n} : Set ℕ).ncard : ℝ) := by
++  let P := P_n_def p n
++  let start := 10 * M n
++  let offset := (C n % P + P - start % P) % P
++  let q := 4 * M n / P
++  let f := fun j : ℕ => start + offset + P * j
++  have hP : 0 < P := h_p_pos
++  have hoff : offset < P := Nat.mod_lt _ hP
++  have hmod : (start + offset) % P = C n % P := by
++    have hsub : start % P ≤ C n % P + P := by
++      have hlt := Nat.mod_lt start hP
++      omega
++    calc
++      (start + offset) % P = (start % P + offset % P) % P := Nat.add_mod _ _ _
++      _ = (start % P + (C n % P + P - start % P) % P) % P := by
++        dsimp [offset]
++        rw [Nat.mod_mod]
++      _ = (start % P + (C n % P + P - start % P)) % P := by
++        simp only [Nat.add_mod, Nat.mod_mod]
++      _ = (C n % P + P) % P := by rw [Nat.add_sub_of_le hsub]
++      _ = C n % P := by rw [Nat.add_mod_right, Nat.mod_mod]
++  have hinj : Function.Injective f := by
++    intro i j hij
++    have hmul : P * i = P * j := Nat.add_left_cancel hij
++    exact Nat.eq_of_mul_eq_mul_left hP hmul
++  have hmem : ∀ j ∈ Finset.range q,
++      f j ∈ ({x ∈ Icc (10 * M n) (14 * M n) |
++        x % P = C n % P} : Set ℕ) := by
++    intro j hj
++    have hjq : j + 1 ≤ q := Finset.mem_range.mp hj
++    have hbound : P * j + P ≤ 4 * M n := by
++      calc
++        P * j + P = P * (j + 1) := by ring
++        _ ≤ P * q := Nat.mul_le_mul_left P hjq
++        _ ≤ 4 * M n := Nat.mul_div_le _ _
++    have hxupper : f j ≤ 14 * M n := by dsimp [f, start]; omega
++    have hxlower : 10 * M n ≤ f j := by dsimp [f, start]; omega
++    refine ⟨⟨hxlower, hxupper⟩, ?_⟩
++    dsimp [f]
++    simpa only [Nat.add_mod, Nat.mul_mod_right, Nat.add_zero, Nat.mod_mod] using hmod
++  let S := (Finset.range q).image f
++  have hsub : (S : Set ℕ) ⊆
++      {x ∈ Icc (10 * M n) (14 * M n) | x % P = C n % P} := by
++    intro x hx
++    obtain ⟨j, hj, rfl⟩ := Finset.mem_image.mp hx
++    exact hmem j hj
++  have hfinite : ({x ∈ Icc (10 * M n) (14 * M n) |
++      x % P = C n % P} : Set ℕ).Finite :=
++    (Set.finite_Icc _ _).subset (fun _ hx => hx.1)
++  have hcard := Set.ncard_le_ncard hsub hfinite
++  have hScard : (S : Set ℕ).ncard = q := by
++    simp only [S, Set.ncard_coe_finset, Finset.card_image_of_injective _ hinj,
++      Finset.card_range]
++  rw [hScard] at hcard
++  have hP_real : (0 : ℝ) < P := by exact_mod_cast hP
++  have hlt : (4 * M n : ℝ) < (P : ℝ) * ((q : ℝ) + 1) := by
++    exact_mod_cast Nat.lt_mul_div_succ (4 * M n) hP
++  have hdiv : (4 * M n : ℝ) / P < (q : ℝ) + 1 :=
++    (div_lt_iff₀ hP_real).mpr (by nlinarith)
++  have hfloor : (4 * M n : ℝ) / P - 1 ≤ q := by linarith
++  exact hfloor.trans (by exact_mod_cast hcard)
+ 
+ lemma exists_M_n_and_B_n (c : ℝ) (hc : c > 0) (hc_lt : c < 1) (p : ℕ → ℕ) (h_pgt2 : ∀ n, p n > 2) (hp_bound : ∀ n, p n ≤ 2^(n+2)) (C : ℕ → ℕ)
+-  (h_C_pn : ∀ n, C n % p n = 0)
+-  (h_C_pm : ∀ n m, m < n → C n % p m = 1) :
++  (_h_C_pn : ∀ n, C n % p n = 0)
++  (_h_C_pm : ∀ n m, m < n → C n % p m = 1) :
+   ∃ (B : ℕ → Set ℕ) (M : ℕ → ℕ),
+   (∀ n, B n = { x ∈ Icc (10 * M n) (14 * M n) | x % (P_n_def p n) = C n % (P_n_def p n) }) ∧
+   (∀ n m, n < m → 14 * M n < 10 * M m) ∧
+@@ -778,7 +820,7 @@
+     have h_exists := exists_good_set_dense_c_lt_1 c' hc'_pos hc'_lt
+     obtain ⟨A, hA_good, hA_dense⟩ := h_exists
+     have h_inf := hc_forall A hA_good
+-    have h_inf_diff : ({N : ℕ | ((A ∩ Icc 1 N).ncard : ℝ) < (N : ℝ) ^ (1 - c)} \ {0}).Infinite := Set.Infinite.diff h_inf (Set.finite_singleton 0)
++    have h_inf_diff : ({N : ℕ | ((A ∩ Icc 1 N).ncard : ℝ) < (N : ℝ) ^ (1 - c)} \ {0}).Infinite := Set.Infinite.sdiff h_inf (Set.finite_singleton 0)
+     have h_sub : {N : ℕ | ((A ∩ Icc 1 N).ncard : ℝ) < (N : ℝ) ^ (1 - c)} \ {0} ⊆ {N : ℕ | ((A ∩ Icc 1 N).ncard : ℝ) < (N : ℝ) ^ (1 - c')} := by
+       rintro N ⟨hN, hN_neq⟩
+       have hN_neq' : N ≠ 0 := hN_neq
+@@ -792,3 +834,7 @@
+     have h_inf' : {N : ℕ | ((A ∩ Icc 1 N).ncard : ℝ) < (N : ℝ) ^ (1 - c')}.Infinite := Set.Infinite.mono h_sub h_inf_diff
+     exact hA_dense h_inf'
+   -- EVOLVE-BLOCK-END
++
++end Erdos12PriorII
++
++end

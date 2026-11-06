@@ -1,0 +1,23 @@
+name = "erdos12_all_parts"
+version = "1.0.0"
+defaultTargets = ["Erdos12AllParts"]
+
+[leanOptions]
+autoImplicit = false
+relaxedAutoImplicit = false
+maxRecDepth = 4096
+maxHeartbeats = 0
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "065356127b1dc0016f66b7283ce0ce2c4055aa55"
+
+[[lean_lib]]
+name = "Erdos12AllParts"
+
+[[lean_lib]]
+name = "Submission"
+
+[[lean_lib]]
+name = "Challenge"

@@ -1,0 +1,1007 @@
+[
+  {
+    "module": "Erdos12.Basic",
+    "start_line_in_wrapped_file": 19,
+    "source_sha256": "ec69c7c32cfc67a56f571ae2c4dd213c2c8b9e5169f9fff9b1cf3c72f05332be"
+  },
+  {
+    "module": "Erdos12.FiniteMean",
+    "start_line_in_wrapped_file": 92,
+    "source_sha256": "90c7ce04b24f233ef3965d14a13b1f0e69c366c0129f6c3df2e0e32b222c39a7"
+  },
+  {
+    "module": "Erdos12.FiniteProductWeights",
+    "start_line_in_wrapped_file": 153,
+    "source_sha256": "fb3fbee323e6066214c5cab884c871dfa0ddf63177b77ebfd2e7f68578cbdc04"
+  },
+  {
+    "module": "Erdos12.FiniteCoordinateWeights",
+    "start_line_in_wrapped_file": 222,
+    "source_sha256": "0db5e028902ba1df28216a652005778d9324d6ed7e46b2fcc8882416203ab765"
+  },
+  {
+    "module": "Erdos12.GeometricWeights",
+    "start_line_in_wrapped_file": 300,
+    "source_sha256": "2a8b9ca2c3c845612c3f35d9a6150bc5171a312418aea0a733a477bf4f14a549"
+  },
+  {
+    "module": "Erdos12.TruncatedGeometric",
+    "start_line_in_wrapped_file": 372,
+    "source_sha256": "f536c89b2e9af02e95aa373feb822091f173493f5ae37053d32c2e3485182983"
+  },
+  {
+    "module": "Erdos12.FiniteGeometricProbability",
+    "start_line_in_wrapped_file": 444,
+    "source_sha256": "c7f06b073d2493553e4a737a1e2b6140b2f6fab6e0e2882454410fd5acdbf976"
+  },
+  {
+    "module": "Erdos12.SelbergTensor",
+    "start_line_in_wrapped_file": 493,
+    "source_sha256": "47664e508c7fa966cb9b30b0eb69586841bc7221bc116dca2a4848064b98fc4b"
+  },
+  {
+    "module": "Erdos12.SelbergEulerWeights",
+    "start_line_in_wrapped_file": 634,
+    "source_sha256": "a81534b3e72513c3ba18231c1eaa4b7f5f2ef4752d76b6995f656186305d8f5c"
+  },
+  {
+    "module": "Erdos12.SelbergLocal",
+    "start_line_in_wrapped_file": 700,
+    "source_sha256": "d2b916d513080b56b9df23ac5a88a98d5ccbdd7123f1f2ac1327aa07e26d7b0d"
+  },
+  {
+    "module": "Erdos12.SelbergSieve",
+    "start_line_in_wrapped_file": 767,
+    "source_sha256": "310a48546d38aa6fa2af8a63ef975055701acad16bb60cc10e6601bee2798265"
+  },
+  {
+    "module": "Erdos12.SieveMassComparison",
+    "start_line_in_wrapped_file": 861,
+    "source_sha256": "ad69a06b04348bc489c060767a890a7f9c653fac6875f4444fd40058e9c4dc15"
+  },
+  {
+    "module": "ChenTheorem.Analysis.PNT.EulerMaclaurin",
+    "start_line_in_wrapped_file": 961,
+    "source_sha256": "f7b9fc30c9a3d3b3f48cda1ae2c67ee17746f40b83e25eb18951d029c15e595c"
+  },
+  {
+    "module": "ChenTheorem.Analysis.PNT.IEANTN.Mertens",
+    "start_line_in_wrapped_file": 1046,
+    "source_sha256": "76f265837489c12949bd76318a2ecaae78fb6425d8ba7a8697fed58b30640167"
+  },
+  {
+    "module": "Erdos12.MertensBounds",
+    "start_line_in_wrapped_file": 3150,
+    "source_sha256": "2b4f72dabb08442745f4cb1340a51e12cdd1a1226e6d662fbdd7b989a3cc16e7"
+  },
+  {
+    "module": "Erdos12.EulerProductBounds",
+    "start_line_in_wrapped_file": 3206,
+    "source_sha256": "f401e1526aaec276d25d24994381b92063d3bbcd55d77acccbcb86215d47bea8"
+  },
+  {
+    "module": "Erdos12.SmallPrimeRemoval",
+    "start_line_in_wrapped_file": 3265,
+    "source_sha256": "f70ac74c25c17601fd394932eafaa5ad21bc30bad92088a11cda6c1c403422cd"
+  },
+  {
+    "module": "Erdos12.PrimeBandEuler",
+    "start_line_in_wrapped_file": 3338,
+    "source_sha256": "1a19de4ece29c51fb109628271e0e73cb62564b255f807d87d55aa86809a1772"
+  },
+  {
+    "module": "Erdos12.FinitePrimeSamples",
+    "start_line_in_wrapped_file": 3424,
+    "source_sha256": "83870604c1a51f03becebfb96b4c86b8bba4bf621e757928fb2723a1e7f3ade8"
+  },
+  {
+    "module": "Erdos12.PrefixProbability",
+    "start_line_in_wrapped_file": 3517,
+    "source_sha256": "794abaca3bfb03cbdeea8ae85d15ee3ecf7fbc827b1aaa367b106a5039ef2b70"
+  },
+  {
+    "module": "Erdos12.PrefixWeightBound",
+    "start_line_in_wrapped_file": 3591,
+    "source_sha256": "cccfe591455dd77a2a4fd06cffe159312b08a41cbc878cc0e7d5c85bba76364f"
+  },
+  {
+    "module": "Erdos12.PrimitiveReduction",
+    "start_line_in_wrapped_file": 3634,
+    "source_sha256": "620408c08833c206d6e5cc13995ca7711f86ccbbeca6a017d1da3ebe8c31767d"
+  },
+  {
+    "module": "Erdos12.PrimeFibres",
+    "start_line_in_wrapped_file": 3738,
+    "source_sha256": "71780d2c496060763692a4fbf5f77c19702eb1cbfa9e0cbf60e8ba953c5dcdb9"
+  },
+  {
+    "module": "Erdos12.FibreDecomposition",
+    "start_line_in_wrapped_file": 3802,
+    "source_sha256": "889c09b944f2522d7d75c95cc72533ddb43da452befa77f0a751878aaea0f48b"
+  },
+  {
+    "module": "Erdos12.SelbergCRT",
+    "start_line_in_wrapped_file": 3897,
+    "source_sha256": "eb9b5232c7f811a41b6b1a3fb41264ea24111a351dd3b010c53c4b06c75f8426"
+  },
+  {
+    "module": "Erdos12.SelbergCoefficientCounting",
+    "start_line_in_wrapped_file": 3953,
+    "source_sha256": "9fff909a904ed890fc23dc961cada821e87256c43e36e0b05e71082ce13cd872"
+  },
+  {
+    "module": "Erdos12.SelbergCoefficientBounds",
+    "start_line_in_wrapped_file": 4034,
+    "source_sha256": "ec634630528ba5ab39d24b6c0cffa8bcfd8ce3de2526d46ab4c784f7103e93a7"
+  },
+  {
+    "module": "Erdos12.SelbergFourierLocal",
+    "start_line_in_wrapped_file": 4133,
+    "source_sha256": "e3df139ea0122631e2701272e230eb38781b50a3f4f0e1d4912993614d1cffe1"
+  },
+  {
+    "module": "Erdos12.SelbergCoefficientDecay",
+    "start_line_in_wrapped_file": 4257,
+    "source_sha256": "6dde7d2ad045e2514373c6f41e9c2b663c16360384883063509cf602da60c224"
+  },
+  {
+    "module": "Erdos12.SelbergSpectrumSupport",
+    "start_line_in_wrapped_file": 4316,
+    "source_sha256": "c62937d69b51416243de2fbea1adfebee5f2828e5cdb75dc86e9ad3ae87b8c8f"
+  },
+  {
+    "module": "Erdos12.SelbergFourier",
+    "start_line_in_wrapped_file": 4370,
+    "source_sha256": "49f2002b624fe202e8e6e00956a2cd18dc524cc6b240af0c852972b84d8d55e2"
+  },
+  {
+    "module": "Erdos12.SelbergFourierInversion",
+    "start_line_in_wrapped_file": 4505,
+    "source_sha256": "b84d5dd90b2abc2b912b443912b7613e4583f6d2f09ab8e3b3655d447b17a13a"
+  },
+  {
+    "module": "Erdos12.SelbergCharacters",
+    "start_line_in_wrapped_file": 4595,
+    "source_sha256": "8045d31e1716773791c43378729a605f24a6168d6a3751eb6b36e575cb99dc68"
+  },
+  {
+    "module": "Erdos12.SelbergRationalFrequencies",
+    "start_line_in_wrapped_file": 4722,
+    "source_sha256": "d22abfe2b9d14f189ed144535cc185031e960a8508ace0c32c3a72621cd79fec"
+  },
+  {
+    "module": "Erdos12.SelbergFrequencySpacing",
+    "start_line_in_wrapped_file": 4825,
+    "source_sha256": "5febb4757163ba721b8c66eb0e06c13a3b56452bf80bc394a714ccc16fb75347"
+  },
+  {
+    "module": "Erdos12.SelbergIntegerExpansion",
+    "start_line_in_wrapped_file": 4906,
+    "source_sha256": "5b8ef01d46e9983f879f8fad0cf9bd0d4373c5380e38af2f778a8f8944b9d934"
+  },
+  {
+    "module": "Erdos12.CyclicFourier",
+    "start_line_in_wrapped_file": 5004,
+    "source_sha256": "4d2f75cb6ac3a5534c83e20a836e7a9221e94f7856c82e0dc777ae3795ca79e7"
+  },
+  {
+    "module": "Erdos12.CyclicCorrelation",
+    "start_line_in_wrapped_file": 5085,
+    "source_sha256": "f94ac6d16fe869ed2a903e7ab2c83e3a8c7f153fcfaa6e5e77d14077c72ffa64"
+  },
+  {
+    "module": "Erdos12.CyclicDilations",
+    "start_line_in_wrapped_file": 5130,
+    "source_sha256": "601d852d1640e98a0a4bcf3497557442b57d62dc1edc23d5fa04c6d9af79dfe4"
+  },
+  {
+    "module": "Erdos12.BandlimitedKernel",
+    "start_line_in_wrapped_file": 5194,
+    "source_sha256": "15e947548d6b90088f977c3f15445be182f57fc8144e812d5976a9c729dd44e3"
+  },
+  {
+    "module": "Erdos12.BandlimitedAffine",
+    "start_line_in_wrapped_file": 5291,
+    "source_sha256": "79c5a5410cc4a701b37b01ad5891656ac56913bcfea44564bb94c8e0caf54709"
+  },
+  {
+    "module": "Erdos12.BandlimitedBump",
+    "start_line_in_wrapped_file": 5358,
+    "source_sha256": "021e5d18de858ae2f24ff1801af18a2d4d757c5ccfe8ad846452fe2abdb35c76"
+  },
+  {
+    "module": "Erdos12.IntervalMajorant",
+    "start_line_in_wrapped_file": 5423,
+    "source_sha256": "04920bcf045cdca70dc1cf6b28a82ca2668f2b8f1925bc3ccb3f6d97042fd83f"
+  },
+  {
+    "module": "Erdos12.IntervalMajorantMass",
+    "start_line_in_wrapped_file": 5501,
+    "source_sha256": "696df2662433f12b2299e42618d17615b5ebb19679e77240df05d68849b29307"
+  },
+  {
+    "module": "Erdos12.BandlimitedPoisson",
+    "start_line_in_wrapped_file": 5588,
+    "source_sha256": "ab9e1dc89187a55f003310a4078d676a6d80e283288a2fc1e2830fdb41284ab4"
+  },
+  {
+    "module": "Erdos12.IntegerFourier",
+    "start_line_in_wrapped_file": 5666,
+    "source_sha256": "a6e6a9308c25cc505e81499fb7cf6a1f8c9c9b94d935daae94cd504deab059aa"
+  },
+  {
+    "module": "AnalyticNumberTheory.LargeSieve.GeomSum",
+    "start_line_in_wrapped_file": 5741,
+    "source_sha256": "ef8cb8c0eb6107d800f37deb4f09c4f626a7321d8fabfe295151ce789427ef7c"
+  },
+  {
+    "module": "Erdos12.ExponentialSums",
+    "start_line_in_wrapped_file": 6081,
+    "source_sha256": "3fc316735f729cdaec0d61ed09998d5c4ac9fffc763decd1101ce1bc93bb3e2d"
+  },
+  {
+    "module": "Erdos12.RationalOrbitSpacing",
+    "start_line_in_wrapped_file": 6142,
+    "source_sha256": "f7b5a5f8d99e3bf0a486fa0d8130824c1e7c34a89669ebaa6bcd2c8d15309f6d"
+  },
+  {
+    "module": "Erdos12.TrigPolynomials",
+    "start_line_in_wrapped_file": 6199,
+    "source_sha256": "c3cbbaa0c90aec1a45001c87e7f4d6b93963f560ffbfab4e60865587e3c5d83f"
+  },
+  {
+    "module": "Erdos12.SchwartzPolynomials",
+    "start_line_in_wrapped_file": 6238,
+    "source_sha256": "23b2f37a92c473c0d99484218c4602146f0aa7000e75b72aeefcc774c05ad13f"
+  },
+  {
+    "module": "Erdos12.SelbergPoisson",
+    "start_line_in_wrapped_file": 6299,
+    "source_sha256": "b943e96fe8336964588f5dd0e543257c637ff7de935a1072e4bdaf84eda2f5fe"
+  },
+  {
+    "module": "Erdos12.SelbergCorrelationBounds",
+    "start_line_in_wrapped_file": 6404,
+    "source_sha256": "b90ab579ee33403ea608d345db45278d1036bfa18b0cc130b3a318858844d8c8"
+  },
+  {
+    "module": "Erdos12.SelbergDualBound",
+    "start_line_in_wrapped_file": 6521,
+    "source_sha256": "13b8bc5defbe8801af2664efed81ea05daa9da7d8e7e2a100e78624128a7fe37"
+  },
+  {
+    "module": "Erdos12.SelbergWeightedSums",
+    "start_line_in_wrapped_file": 6624,
+    "source_sha256": "32d2fdb05f704ea650ca944fd8d8a4c84c1b0c2d1a769e96b401db206ddfc728"
+  },
+  {
+    "module": "Erdos12.SiftedDual",
+    "start_line_in_wrapped_file": 6714,
+    "source_sha256": "7e3356f04ff4c7758e1d46e991f5b7c0b43c591257810b19a667149cfda9a583"
+  },
+  {
+    "module": "Erdos12.QuantitativeSiftedDual",
+    "start_line_in_wrapped_file": 6753,
+    "source_sha256": "33973f3ea2a4f96ba148d29be05ee4efe9df1b266d53864547ddd09674910252"
+  },
+  {
+    "module": "Erdos12.RestrictionParameters",
+    "start_line_in_wrapped_file": 6833,
+    "source_sha256": "df212814aba0ceae73de15d367a322d2eef4b35ab67a233d5f477448cb36cc16"
+  },
+  {
+    "module": "Erdos12.LogarithmicDual",
+    "start_line_in_wrapped_file": 6899,
+    "source_sha256": "48dbf62b577a86b73496bccf2d6d56152f8d721ca0e7f466b6a42cd54a9def3d"
+  },
+  {
+    "module": "Erdos12.FiniteFourier",
+    "start_line_in_wrapped_file": 6999,
+    "source_sha256": "01c6a5467420bfa88a34e993957aa55fea26d36358a004b9250b975d58128060"
+  },
+  {
+    "module": "Erdos12.FourierLevelSets",
+    "start_line_in_wrapped_file": 7051,
+    "source_sha256": "52dac3d75444f577ea3cd73958b7fdf4989ee97582248d81fb280d644b6f12c3"
+  },
+  {
+    "module": "Erdos12.LogarithmicDistribution",
+    "start_line_in_wrapped_file": 7129,
+    "source_sha256": "f294b60c26f7fc71750d6b042c84cea6ccf2399f0a55f35bb8c893853ffefa65"
+  },
+  {
+    "module": "Erdos12.LogarithmicLevels",
+    "start_line_in_wrapped_file": 7182,
+    "source_sha256": "4ba91a6e24a0d2738e35bec6d707ebeb42326700b042f7ade62e7424c74cd424"
+  },
+  {
+    "module": "Erdos12.LogarithmicMoments",
+    "start_line_in_wrapped_file": 7222,
+    "source_sha256": "9bd4fdbd283c42caaf94500cc875b2d28b6a2e57995e24cbaed5b0709e44e3d2"
+  },
+  {
+    "module": "Erdos12.FiniteLogarithmicMoments",
+    "start_line_in_wrapped_file": 7288,
+    "source_sha256": "816c3881c114fdcfe0fd04d7979f301447a9badba0ac014482b7316fd00bceab"
+  },
+  {
+    "module": "Erdos12.FourierNormalization",
+    "start_line_in_wrapped_file": 7326,
+    "source_sha256": "8e664a3be8c0bc7789580d455dfd016fc5db89284f8185b8d7a0c1efe6d66fd4"
+  },
+  {
+    "module": "Erdos12.SiftedRestriction",
+    "start_line_in_wrapped_file": 7381,
+    "source_sha256": "f9feaebe741afc70eb936d9adf7ded8940d2869ed03fb3a0e1dcc88168ab1f61"
+  },
+  {
+    "module": "Erdos12.RestrictionNorm",
+    "start_line_in_wrapped_file": 7490,
+    "source_sha256": "6e937c4e1a7b0ca19e275bfb082238b9279a3ab6603cc7576172707ca339cf36"
+  },
+  {
+    "module": "Erdos12.FiniteFourierNorms",
+    "start_line_in_wrapped_file": 7526,
+    "source_sha256": "7742b40447e1d2cdee5c39d818931d90e969f89c2262006bcc18bc7948fe325a"
+  },
+  {
+    "module": "Erdos12.CyclicIntegerFourier",
+    "start_line_in_wrapped_file": 7609,
+    "source_sha256": "30083a9a5623456584e4170180ce69f82d3dc06db3f4574cf3c0e690dc897852"
+  },
+  {
+    "module": "Erdos12.RationalApproximation",
+    "start_line_in_wrapped_file": 7698,
+    "source_sha256": "37d5c101c40bbd5176752a2777d00e4613951d00931e54879c8702bf64d4f317"
+  },
+  {
+    "module": "Erdos12.GridSmoothing",
+    "start_line_in_wrapped_file": 7773,
+    "source_sha256": "e847ffe16919fbeaac310cdea4925bf4d2afef36aba5937a8841b5d462c665e8"
+  },
+  {
+    "module": "Erdos12.GridGeometricBounds",
+    "start_line_in_wrapped_file": 7875,
+    "source_sha256": "0fa7e93013eff89f99b6dfa3721a171aa7a42d41c2c8a0aab50d3911b8c60382"
+  },
+  {
+    "module": "Erdos12.Sifting",
+    "start_line_in_wrapped_file": 7953,
+    "source_sha256": "442eb0cc569f23202fe06c1ad333511b094ae9da5fb45d6f267db14a0302faf9"
+  },
+  {
+    "module": "Erdos12.RationalGridBounds",
+    "start_line_in_wrapped_file": 8037,
+    "source_sha256": "99d0f9894117564fabd1ac0a3f39f4d1d6a3f62638e9c768d63933cc8aa39cff"
+  },
+  {
+    "module": "Erdos12.WeightedGridBounds",
+    "start_line_in_wrapped_file": 8130,
+    "source_sha256": "8465e0f9f7fe53b471182897999b9329c06bc4f79fc5abcc7e58ef4a799d1402"
+  },
+  {
+    "module": "Erdos12.CyclicGridFunctions",
+    "start_line_in_wrapped_file": 8218,
+    "source_sha256": "4ee26623013589e272e099b4a525c65e8b0c84d58aca604496ee19d726188c1c"
+  },
+  {
+    "module": "Erdos12.RoughProducts",
+    "start_line_in_wrapped_file": 8335,
+    "source_sha256": "b7c5e64f067ab7b20243de925203446594df54bce5b348c0278c33045115f50f"
+  },
+  {
+    "module": "Erdos12.CyclicGridSupport",
+    "start_line_in_wrapped_file": 8364,
+    "source_sha256": "7a11b7cc33e847fa4493dc2433ce198a80350bdae6ecb40f2e4972291a7828e7"
+  },
+  {
+    "module": "Erdos12.CyclicCellBounds",
+    "start_line_in_wrapped_file": 8474,
+    "source_sha256": "515133eef96bba5e68b1e1307b2d16da5f287521d5363658bfec109fe3c9eaee"
+  },
+  {
+    "module": "Erdos12.CyclicGridMeans",
+    "start_line_in_wrapped_file": 8606,
+    "source_sha256": "97a072b0c4ad4706ef040563ba01ca8b19ddcc756a1ef8cf0692e28b3bca5918"
+  },
+  {
+    "module": "Erdos12.SiftedCoefficientSupport",
+    "start_line_in_wrapped_file": 8680,
+    "source_sha256": "83370f4d7d51d16b78d283ea67d9138ac182b80c70a4a09b18552eb393fc4ce9"
+  },
+  {
+    "module": "Erdos12.CyclicFunctionRestriction",
+    "start_line_in_wrapped_file": 8726,
+    "source_sha256": "f5f5292dcc2ce65f31f2cbca7865c4ebe3571b59a7f6beaa642a1fc33a22662e"
+  },
+  {
+    "module": "Erdos12.CyclicRoughGridBounds",
+    "start_line_in_wrapped_file": 8813,
+    "source_sha256": "d1850c823743dc94b8101a0a8ba4e3d197348a9fbd2bd0176966bb3452be2cfb"
+  },
+  {
+    "module": "Erdos12.CyclicRoughSetBounds",
+    "start_line_in_wrapped_file": 8931,
+    "source_sha256": "33082dbc34bd86057cb8ca9618c64990eae1048746e9580e6b4cac65f6c552be"
+  },
+  {
+    "module": "Erdos12.SieveNormScales",
+    "start_line_in_wrapped_file": 8996,
+    "source_sha256": "2e176bcc61af262026f0ac69d979236a773aa8b027d0fa75f680aa9ef5996f11"
+  },
+  {
+    "module": "Erdos12.RoughBlockGeometry",
+    "start_line_in_wrapped_file": 9052,
+    "source_sha256": "c48775ac3df299a884903236272ee9626ce659d85140daf6b4f3d4c7b0e2bd16"
+  },
+  {
+    "module": "Erdos12.FinitePrimeSieve",
+    "start_line_in_wrapped_file": 9155,
+    "source_sha256": "98755132710d29fa58618e8f06ca6834a8e52326f28d6aeac0ae39edcd0df803"
+  },
+  {
+    "module": "Erdos12.SelbergMassLowerBound",
+    "start_line_in_wrapped_file": 9218,
+    "source_sha256": "44206ed7e40483df23381d9fc8bd9c66fa3a4a72c489107c2e4914170d5ce4b5"
+  },
+  {
+    "module": "Erdos12.PrimeBandMass",
+    "start_line_in_wrapped_file": 9285,
+    "source_sha256": "b5996dcd59464938b97f11060f7d2ab28e8c3464f4f70fe710cef40fd1f5af73"
+  },
+  {
+    "module": "Erdos12.SieveDensityPrinciple",
+    "start_line_in_wrapped_file": 9335,
+    "source_sha256": "081c08cf89bc0f5c001bffc151a4c0d3b3e9d2b077e49e3f7ec0292a930c4f37"
+  },
+  {
+    "module": "Erdos12.SieveLevel",
+    "start_line_in_wrapped_file": 9424,
+    "source_sha256": "46282969b166f3660d6de19ec6bef9d65fa48d10afbe2a74f3a33a17c6bae35c"
+  },
+  {
+    "module": "Erdos12.SieveDensityBounds",
+    "start_line_in_wrapped_file": 9513,
+    "source_sha256": "ab3236db41fa86fac38495fabff20e202b1eb1e122c71f95c198102335194c60"
+  },
+  {
+    "module": "Erdos12.SiftedCounting",
+    "start_line_in_wrapped_file": 9577,
+    "source_sha256": "4e8d3ecdd588790b9a8e7d97f6ec52731e4aab40237b0321f388e9dfa88526f8"
+  },
+  {
+    "module": "Erdos12.RoughBlockScales",
+    "start_line_in_wrapped_file": 9673,
+    "source_sha256": "94d79a57bf9ca62bfd758aeeb93188b95ab01074a7aa4101b7292ee9c43213de"
+  },
+  {
+    "module": "Erdos12.BlockComparisonScales",
+    "start_line_in_wrapped_file": 9766,
+    "source_sha256": "5e74d36d6781d19921aa71602fe71cb941b954517a00f4e4b8804678ad356462"
+  },
+  {
+    "module": "Erdos12.GeometricComparisonScales",
+    "start_line_in_wrapped_file": 9819,
+    "source_sha256": "2adaa5a8b684b77a78fe121a67d17f080fa7a86191e286aaa7827aff48d16f80"
+  },
+  {
+    "module": "Erdos12.MeanNorms",
+    "start_line_in_wrapped_file": 9912,
+    "source_sha256": "ac76c7d62a6b466e0c64284695cf2bc9ee8e7626e663e45e6964f61a6ad1790f"
+  },
+  {
+    "module": "Erdos12.NaturalRestriction",
+    "start_line_in_wrapped_file": 9962,
+    "source_sha256": "1bde12cf6517b2f5c2064cc8a0ac9684ebc6b5e1b457146e3daf56a62754a18d"
+  },
+  {
+    "module": "Erdos12.FiniteNormPartition",
+    "start_line_in_wrapped_file": 10055,
+    "source_sha256": "3240a728ba71261ba4ca4b082d9b99bb7be702c0ebaadc4f374afcae181f787f"
+  },
+  {
+    "module": "Erdos12.OrbitSeparation",
+    "start_line_in_wrapped_file": 10100,
+    "source_sha256": "1cd9bf2f58f842560cc4519100f1f90309fa44a593966dcad3ef713f72febf12"
+  },
+  {
+    "module": "Erdos12.RationalOrbitFibres",
+    "start_line_in_wrapped_file": 10145,
+    "source_sha256": "71a3c8f9fb135e5ee794333bb439c992fdc8760903e23e583813da85ae3e66ee"
+  },
+  {
+    "module": "Erdos12.RationalGridRestriction",
+    "start_line_in_wrapped_file": 10212,
+    "source_sha256": "c73615c1c642d423d84676b5554353fda78d0bcc3be5a046017dfb9a89291649"
+  },
+  {
+    "module": "Erdos12.FrequencyDichotomy",
+    "start_line_in_wrapped_file": 10265,
+    "source_sha256": "d43017698f6a920c60cebf7449e418101fa5a5e954dfe7851a9d94e85d1cae72"
+  },
+  {
+    "module": "Erdos12.GeometricGridComparison",
+    "start_line_in_wrapped_file": 10331,
+    "source_sha256": "f9ed77b720362b49f4171059f5ad42c87e6dffc8720ec639b537cfa0ee7fcec6"
+  },
+  {
+    "module": "Erdos12.ScaledGridRestriction",
+    "start_line_in_wrapped_file": 10428,
+    "source_sha256": "0bf0502061af25147abc71423fc801b1e4db7fa7ef68e8abf901ada350528922"
+  },
+  {
+    "module": "Erdos12.ScaledRationalGrid",
+    "start_line_in_wrapped_file": 10479,
+    "source_sha256": "5bdbccc4d098f558d1ca4e582002dec970a475ca368abe2acfedce75ff5dfd26"
+  },
+  {
+    "module": "Erdos12.UniformBlockComparison",
+    "start_line_in_wrapped_file": 10524,
+    "source_sha256": "297e759172b6861e31a09757db357f4d460bf0a7c6b06a510a5d9f927daf5d09"
+  },
+  {
+    "module": "Erdos12.ScaledBlockNorms",
+    "start_line_in_wrapped_file": 10672,
+    "source_sha256": "d751b98d20bfad895a06da53fa3719ecb7a48d1db7e2a947e7c19fb4e32f3cb5"
+  },
+  {
+    "module": "Erdos12.ScaledGridNorms",
+    "start_line_in_wrapped_file": 10777,
+    "source_sha256": "2b483847f6d5d59a212af86e704fd162c0a60a8a850ef262c1fdee5ad9f297e8"
+  },
+  {
+    "module": "Erdos12.BlockInterpolation",
+    "start_line_in_wrapped_file": 10871,
+    "source_sha256": "511017a7362d6acb33e6ddb70f0c7264774dd89e3b4d40de01fdbf2ec9a55698"
+  },
+  {
+    "module": "Erdos12.BlockFourierNine",
+    "start_line_in_wrapped_file": 10944,
+    "source_sha256": "c8fd0d20af928216581f7f6e4e47a18c45eb655cee08738d25fbd0bdb289889e"
+  },
+  {
+    "module": "Erdos12.CyclicNormBounds",
+    "start_line_in_wrapped_file": 11012,
+    "source_sha256": "047ec05ac6271414494c20a6b1f684621a394868e793900e442f06a8bfc7d147"
+  },
+  {
+    "module": "Erdos12.CyclicPositiveComparison",
+    "start_line_in_wrapped_file": 11081,
+    "source_sha256": "26c11c5e9002f8ad5f9338cda98cc93e5aa56b0b5d910134963e36b2ec867fca"
+  },
+  {
+    "module": "Erdos12.TwoBlockTransfer",
+    "start_line_in_wrapped_file": 11137,
+    "source_sha256": "34c451182c140f46dbcbae6181fa16bfd579932bd520431e09fe2138ce950439"
+  },
+  {
+    "module": "Erdos12.RoughBlockCorrelation",
+    "start_line_in_wrapped_file": 11194,
+    "source_sha256": "1fc00164767eaa683fe2d47d119ded60437126e161c6f5ba36344e656ef43542"
+  },
+  {
+    "module": "Erdos12.TwoBlockAssembly",
+    "start_line_in_wrapped_file": 11267,
+    "source_sha256": "c0e514c023879c95e3e90a9019cbe13f8d4a8163e1622cb6afdf63b6a93d8c5a"
+  },
+  {
+    "module": "Erdos12.TwoBlock",
+    "start_line_in_wrapped_file": 11348,
+    "source_sha256": "2d844fcf25574116fda2db1e59774bd59f09b0c1edb696825e7df05f104f1445"
+  },
+  {
+    "module": "Erdos12.DyadicBlockInteraction",
+    "start_line_in_wrapped_file": 11443,
+    "source_sha256": "627e391456e5bdac6f94ccc6aa87da53d1814a9ea2622909d41bf070e1d904d9"
+  },
+  {
+    "module": "Erdos12.DyadicDecomposition",
+    "start_line_in_wrapped_file": 11534,
+    "source_sha256": "2b6be8c2268af643a29586ceb4378ab226a4163d7e68dfd9fe28815e1d1a4df3"
+  },
+  {
+    "module": "Erdos12.PrimeTailSplit",
+    "start_line_in_wrapped_file": 11579,
+    "source_sha256": "fba60ba50afe76c343292f735f06c0241ed0eb7e1dd49719039a10de8c9648a5"
+  },
+  {
+    "module": "Erdos12.DyadicWeightSummation",
+    "start_line_in_wrapped_file": 11636,
+    "source_sha256": "1e11afbe6610c4b64ce8e83c693baabebad67dd139ba920b649060955b1b48c5"
+  },
+  {
+    "module": "Erdos12.DyadicDensityPacking",
+    "start_line_in_wrapped_file": 11738,
+    "source_sha256": "ef33a7400f28b48da3be3ad54d5bb0a3ced4c02a037b4394d7bd86c3031f0c08"
+  },
+  {
+    "module": "Erdos12.FinitePrimeRemoval",
+    "start_line_in_wrapped_file": 11821,
+    "source_sha256": "33766852dfceda3c80ac1c3c325bc7338034fbe85cf96043a6b89cecc15c3a24"
+  },
+  {
+    "module": "Erdos12.PrimeSieveEulerCost",
+    "start_line_in_wrapped_file": 11879,
+    "source_sha256": "2eeb9f48810e0cbdcde0ec51e1efac86dcd5e5115a1cc8909e472fa7575bef81"
+  },
+  {
+    "module": "Erdos12.ProgressionSieveMass",
+    "start_line_in_wrapped_file": 11967,
+    "source_sha256": "3a6e40809915a35ab6e1d4b81d43e8273726694a825e946da5aacacf90021337"
+  },
+  {
+    "module": "Erdos12.TranslatedSieve",
+    "start_line_in_wrapped_file": 12019,
+    "source_sha256": "d5b76163979a81e1ef970a114ccff3b20aeae7afc26b9f3c8839361d80b8635f"
+  },
+  {
+    "module": "Erdos12.TranslatedSiftedCounting",
+    "start_line_in_wrapped_file": 12097,
+    "source_sha256": "fcf41d2003b75295394bd253b6df3beb09360a487240709e78e3c9da55e61527"
+  },
+  {
+    "module": "Erdos12.ResidueAvoidingCount",
+    "start_line_in_wrapped_file": 12146,
+    "source_sha256": "effd008b5898a163121482071c5905ebc67baf6905d93eda87f4e5af36c05acf"
+  },
+  {
+    "module": "Erdos12.AffineSieve",
+    "start_line_in_wrapped_file": 12203,
+    "source_sha256": "a52e2e09c14b0cf73309bb290f3f353f480d8ae93170e3fdcf88f653e76eba33"
+  },
+  {
+    "module": "Erdos12.ProgressionSieve",
+    "start_line_in_wrapped_file": 12235,
+    "source_sha256": "8692559e057135729edd2af12204567b1874fe48548e9a6b20ef291f001b02fd"
+  },
+  {
+    "module": "Erdos12.IntervalCounting",
+    "start_line_in_wrapped_file": 12314,
+    "source_sha256": "caab64872aa6776d2dc1dcc3306ec6ca759b7a304691bfe68c932434478f7e55"
+  },
+  {
+    "module": "Erdos12.ProgressionPrimeCount",
+    "start_line_in_wrapped_file": 12361,
+    "source_sha256": "5c2e89144032b9bcc42926421da4947e9e3f71cdb54a5e75106efba5b6ea898a"
+  },
+  {
+    "module": "Erdos12.BrunTitchmarsh",
+    "start_line_in_wrapped_file": 12439,
+    "source_sha256": "63c22c119aabcc74fe2ef64d79c74c5f28f4214c62983427f58ac91532bf02da"
+  },
+  {
+    "module": "Erdos12.PrimeResidueCounts",
+    "start_line_in_wrapped_file": 12553,
+    "source_sha256": "a89a0a2899761c9b0ad9b61507ed60e99c1394f4229407266019dc43c1b44194"
+  },
+  {
+    "module": "Erdos12.CRTResidueCounting",
+    "start_line_in_wrapped_file": 12610,
+    "source_sha256": "20bf30d9d9070e26c6e2afee79be9257c0547ab0ff0f819848b6b5feae24b17e"
+  },
+  {
+    "module": "Erdos12.ResiduePairs",
+    "start_line_in_wrapped_file": 12649,
+    "source_sha256": "5d693fd840f57ab933e85ce6d5677b0dd881f8f82031d3811802a6b595b2f3eb"
+  },
+  {
+    "module": "Erdos12.OppositePrimeCount",
+    "start_line_in_wrapped_file": 12720,
+    "source_sha256": "b9eff145d51e1c05273fc249d7842b7c101574e3b55d2e62fd7aa683f8a5ad47"
+  },
+  {
+    "module": "Erdos12.PrimeHarmonicIntervals",
+    "start_line_in_wrapped_file": 12786,
+    "source_sha256": "0d88264a58778531094032dce8f5c1f36b27bb6ff59ff9d433a00bd942209e21"
+  },
+  {
+    "module": "Erdos12.PrimeUniformBound",
+    "start_line_in_wrapped_file": 12924,
+    "source_sha256": "ad6b8bb292219cb48c8715bd6e6193b706ebe0cecdbd11c75eabc924d446d31e"
+  },
+  {
+    "module": "Erdos12.PrimeNearRange",
+    "start_line_in_wrapped_file": 13042,
+    "source_sha256": "6609bae2e5e3574644257c9b8f56a8f225e26a0de8e8d852d4f23a17e7ca7420"
+  },
+  {
+    "module": "Erdos12.PrimeNearBins",
+    "start_line_in_wrapped_file": 13124,
+    "source_sha256": "deb2724580d6501af94116e0d9573910bd911fc75d42f38cfd1b9d9960179479"
+  },
+  {
+    "module": "Erdos12.PrimeTailParameters",
+    "start_line_in_wrapped_file": 13188,
+    "source_sha256": "3dc9ae337825f9c6581aa05e7c6daac1709337cd8c96f1e0e92d27d93939c704"
+  },
+  {
+    "module": "Erdos12.PrimeTailNumerics",
+    "start_line_in_wrapped_file": 13281,
+    "source_sha256": "25d9c5c4e5d30bf32ee167ea282d5e8e076010f699222b03f27d4256bb0e4cdc"
+  },
+  {
+    "module": "Erdos12.PrimeFarTail",
+    "start_line_in_wrapped_file": 13380,
+    "source_sha256": "da6bec036317a14f044f51c9e31dc212e550e52d0459798e9003fbb2e08d97f0"
+  },
+  {
+    "module": "Erdos12.SelectedPrimeProducts",
+    "start_line_in_wrapped_file": 13446,
+    "source_sha256": "56df170f3bccbe0bbdcba6e2acf92e0f09b7e0e8f5242a02fc0a44226b2d0213"
+  },
+  {
+    "module": "Erdos12.PrimeLightBins",
+    "start_line_in_wrapped_file": 13486,
+    "source_sha256": "6f8c069e7c57422f201bb85c1e8fa2916000b45c3c587f7139f024d9df4202a5"
+  },
+  {
+    "module": "AnalyticNumberTheory.LargeSieve.Additive",
+    "start_line_in_wrapped_file": 13548,
+    "source_sha256": "a4035fd53ec86b44ac25d87619ef8551adc673ecfb5754e82c1563b2272c488f"
+  },
+  {
+    "module": "AnalyticNumberTheory.LargeSieve.Duality",
+    "start_line_in_wrapped_file": 13729,
+    "source_sha256": "e042f5060f7ad01c8b6e69d875c95525371901349243103af91782714040be14"
+  },
+  {
+    "module": "AnalyticNumberTheory.LargeSieve.WellSpaced",
+    "start_line_in_wrapped_file": 13864,
+    "source_sha256": "7fc0abc4a3b1bb7b09e0f868b116e98ca59ffde65b08a09979cc7b98442760d3"
+  },
+  {
+    "module": "Erdos12.NaturalLargeSieve",
+    "start_line_in_wrapped_file": 14801,
+    "source_sha256": "2c6a7745c7e5f67d5512914e18c24ea67ec781705b382d6897027418e62c5ba9"
+  },
+  {
+    "module": "Erdos12.PrimeFrequencyFamily",
+    "start_line_in_wrapped_file": 14881,
+    "source_sha256": "50130e584d38b85e7ef19096b29b8afdcbbbcc32ce931026d9559b6688d99639"
+  },
+  {
+    "module": "Erdos12.ResidueFourierEnergy",
+    "start_line_in_wrapped_file": 14973,
+    "source_sha256": "8617e48fac4dcaf93097d0aef415d66e3e31ddcbf37357083308e7ffacd92cb1"
+  },
+  {
+    "module": "Erdos12.PrimeLargeSieve",
+    "start_line_in_wrapped_file": 15058,
+    "source_sha256": "f154c44fd23c6e090075685bd3878470ac20d82866fa78a63225b37f41547b92"
+  },
+  {
+    "module": "Erdos12.PrimeMiddleBins",
+    "start_line_in_wrapped_file": 15143,
+    "source_sha256": "3c08a3bab6e0e972ead8ed9be230846b353afea4c7b1891d01b41d6316a8690c"
+  },
+  {
+    "module": "Erdos12.PrimeTailAssembly",
+    "start_line_in_wrapped_file": 15247,
+    "source_sha256": "91c2eb7e314c29d45644e7742350bfea2916c9869178601da0ffb7906bf7d0c5"
+  },
+  {
+    "module": "Erdos12.PrimeTailScales",
+    "start_line_in_wrapped_file": 15385,
+    "source_sha256": "6442aa761cc61ee5927512c96a25162044d45b754f39e06771aa3929bf696d98"
+  },
+  {
+    "module": "Erdos12.PrimeTailDyadic",
+    "start_line_in_wrapped_file": 15450,
+    "source_sha256": "2f7267b53d26e2ea3db340872a3514b8ec7beada739d0a9f615015b0512f669b"
+  },
+  {
+    "module": "Erdos12.PrimeTail",
+    "start_line_in_wrapped_file": 15524,
+    "source_sha256": "2c96cbef62fcb803e643fd676a6792c7bcd4dc98742c44b0e03c9e858bef6ef9"
+  },
+  {
+    "module": "Erdos12.FinitePrimeFibre",
+    "start_line_in_wrapped_file": 15660,
+    "source_sha256": "2eba3d6b459f5acf514eaba0268348359ee77332157b94691e00c7b32703a8de"
+  },
+  {
+    "module": "Erdos12.FiniteFibreDecomposition",
+    "start_line_in_wrapped_file": 15724,
+    "source_sha256": "9b32841eb45f165be40e571f321c57a0e00579b0981601758b399a4a969133b6"
+  },
+  {
+    "module": "Erdos12.PrefixScoreReduction",
+    "start_line_in_wrapped_file": 15769,
+    "source_sha256": "6ad01d5a648974a0639d7ba6929644cc30f3f3252384b3e496af0d4c41579dc8"
+  },
+  {
+    "module": "Erdos12.FibreTailBounds",
+    "start_line_in_wrapped_file": 15838,
+    "source_sha256": "a9805c2019e38197806b69ac6aaa187da92fe88282dac1c20fea636344b4d6d8"
+  },
+  {
+    "module": "Erdos12.PrefixChain",
+    "start_line_in_wrapped_file": 15912,
+    "source_sha256": "469d0ae5aa4fbd8957d22f02ffa6602cbc4ec609919266e8cacb8f27267859ec"
+  },
+  {
+    "module": "Erdos12.FirstPrefixCandidate",
+    "start_line_in_wrapped_file": 15990,
+    "source_sha256": "86b2326d821b201b80fd1f969bdcab2947d1f148256be1d39dd8625426063080"
+  },
+  {
+    "module": "Erdos12.FirstPrefixPredictability",
+    "start_line_in_wrapped_file": 16105,
+    "source_sha256": "09eeb7de5ad4fa3931b7d80808cc0408160950b41f566c9cdaa6fe0b96146cb4"
+  },
+  {
+    "module": "Erdos12.FirstCopyScores",
+    "start_line_in_wrapped_file": 16155,
+    "source_sha256": "bbf7764401c28e5f956d0cc54c1e23f3f39aa6882f5f30c5cbc161f0a9fb3f7e"
+  },
+  {
+    "module": "Erdos12.RepeatedCopyExpectation",
+    "start_line_in_wrapped_file": 16218,
+    "source_sha256": "e548dfc50d3ceb70d8469bf6420dbcddc4f1f458344ca40872ebe4eb99f5f83a"
+  },
+  {
+    "module": "Erdos12.RepeatedPrimeCopies",
+    "start_line_in_wrapped_file": 16292,
+    "source_sha256": "324e50fd5811120528d8ec1b5ae568cff8a9b1382a99a1482f91380841057508"
+  },
+  {
+    "module": "Erdos12.PrefixCopyDecomposition",
+    "start_line_in_wrapped_file": 16335,
+    "source_sha256": "fcafe5813bfc05ccd75198525a259883bb84755ade5373c801450ee3c049a713"
+  },
+  {
+    "module": "Erdos12.FirstCopyReduction",
+    "start_line_in_wrapped_file": 16491,
+    "source_sha256": "fe4f0b5806434d03dc4a4516151082e4c23746bbb7bd61b32768ee64bfa72500"
+  },
+  {
+    "module": "Erdos12.SchedulingBudgets",
+    "start_line_in_wrapped_file": 16519,
+    "source_sha256": "2ac59cd0d3997127284f55a47166bf734d930491813efc180d73ac88c0792266"
+  },
+  {
+    "module": "Erdos12.DelayBudget",
+    "start_line_in_wrapped_file": 16590,
+    "source_sha256": "df4223c6f8613004249bd2dda34483e5483c94d5f09c9f789bb36a30a6dbb07e"
+  },
+  {
+    "module": "Erdos12.PrefixSchedule",
+    "start_line_in_wrapped_file": 16669,
+    "source_sha256": "2ede8d7c73b4155377e764407feb293c61973b93109e916385f8ee85a058f583"
+  },
+  {
+    "module": "Erdos12.ScheduleGuardValidity",
+    "start_line_in_wrapped_file": 16803,
+    "source_sha256": "bb919a68583373742ef4f291096d858f91703e50d6dfa88be5e78b574cf1f8db"
+  },
+  {
+    "module": "Erdos12.GuardedScoreBounds",
+    "start_line_in_wrapped_file": 16879,
+    "source_sha256": "88c6da80b3105edc5acc415a428228d01d1174524fbc76e60607b0ef3b6e944c"
+  },
+  {
+    "module": "Erdos12.ScheduleHistory",
+    "start_line_in_wrapped_file": 16967,
+    "source_sha256": "af20c45ef0b46d478c4d28b1f7be9016937baf88fa7956b09034c1af13c14199"
+  },
+  {
+    "module": "Erdos12.ScheduleTimingBasic",
+    "start_line_in_wrapped_file": 17050,
+    "source_sha256": "7a5bb84ce582e2db92b3c3db29aa162e0bb48c8936dd259ac6ca455f70f83019"
+  },
+  {
+    "module": "Erdos12.ScheduleTiming",
+    "start_line_in_wrapped_file": 17131,
+    "source_sha256": "bd62814d81535a24c22fb035fed37fc3989d95206f79506eceab7befc6bd52bc"
+  },
+  {
+    "module": "Erdos12.StageWeights",
+    "start_line_in_wrapped_file": 17234,
+    "source_sha256": "cf2431892262a9f3d53fe70500b77201a3f9299db95aa7a398635b357d91ec12"
+  },
+  {
+    "module": "Erdos12.ScheduleTransitions",
+    "start_line_in_wrapped_file": 17264,
+    "source_sha256": "32a7127176964eb20b620fcc26206273d9116a6d7ecdca965be26d4998fbed5d"
+  },
+  {
+    "module": "Erdos12.ScheduleGeometry",
+    "start_line_in_wrapped_file": 17358,
+    "source_sha256": "0abe4b31014020c1941db89f1679910a7e9ce4e53f7addebb9b7cb78ce014f0f"
+  },
+  {
+    "module": "Erdos12.PrimePrefixSums",
+    "start_line_in_wrapped_file": 17439,
+    "source_sha256": "92943051aebd3ae0650f1ffd9084c95f523682c660305992ab98f16bd2fbf3da"
+  },
+  {
+    "module": "Erdos12.PendingPotentials",
+    "start_line_in_wrapped_file": 17489,
+    "source_sha256": "fd53b40150e6028e697cd0db8a17d208430dc2b0fc0d6822149610a6c983d3cd"
+  },
+  {
+    "module": "Erdos12.PredictableScheduleBudget",
+    "start_line_in_wrapped_file": 17586,
+    "source_sha256": "eff10436183ec819e9f786ddf2f9521b1e8bee86d1d508686c2ec836d63feffd"
+  },
+  {
+    "module": "Erdos12.DelayPotential",
+    "start_line_in_wrapped_file": 17674,
+    "source_sha256": "360c89116c139b00a3d42da61b43e4165962fb7c6cb5691b0807459cc6de20ca"
+  },
+  {
+    "module": "Erdos12.DelayScheduleBudget",
+    "start_line_in_wrapped_file": 17771,
+    "source_sha256": "55fdee97f5257af1656678e55c7c43f0567a093eda16ff52c68f644a7a11a9a2"
+  },
+  {
+    "module": "Erdos12.ScheduleScorePreparations",
+    "start_line_in_wrapped_file": 17839,
+    "source_sha256": "a464b7f1cafadef6706857c269b1b7881cdc676b8690d7d7f8c62ba072153225"
+  },
+  {
+    "module": "Erdos12.ReadyScorePotential",
+    "start_line_in_wrapped_file": 17939,
+    "source_sha256": "7305054ffbf2c9d25435c74f0fe9aabbb8558cd10e6cae75de58b0d78c7aae0b"
+  },
+  {
+    "module": "Erdos12.ReadyScoreStep",
+    "start_line_in_wrapped_file": 18044,
+    "source_sha256": "986e8932dcbed748731aece740affbcde7f62733c40df5303f0179bac57cf4f9"
+  },
+  {
+    "module": "Erdos12.FullScoreStep",
+    "start_line_in_wrapped_file": 18127,
+    "source_sha256": "f24ef8cae572ff4fb00603c21421305dd4da5a3217d8d8e677d7f12f3dfc09cc"
+  },
+  {
+    "module": "Erdos12.ScheduleBudgetAggregation",
+    "start_line_in_wrapped_file": 18215,
+    "source_sha256": "70b26f8ce27d104853216e561345a6e34230b36ff55894028de825dabe6fa47d"
+  },
+  {
+    "module": "Erdos12.FiniteExpectationAlgebra",
+    "start_line_in_wrapped_file": 18289,
+    "source_sha256": "1f5182201d6e1f183c2275cd7d7a28821869302d672ca436a9a1ca86eef9f9b1"
+  },
+  {
+    "module": "Erdos12.ExpectedScheduleCosts",
+    "start_line_in_wrapped_file": 18325,
+    "source_sha256": "e0dcb76ca7417099ab3187d6947f982ee68b14c8ff2b0690c4cfcfaa5a59891b"
+  },
+  {
+    "module": "Erdos12.ExpectedPrefixBudget",
+    "start_line_in_wrapped_file": 18411,
+    "source_sha256": "7077a91a9e9e67bc7fb043baf5d7267f1f168126ce38a1523b3161de2b55b57d"
+  },
+  {
+    "module": "Erdos12.OddReduction",
+    "start_line_in_wrapped_file": 18499,
+    "source_sha256": "fdf9d491c511a2cd28fcd6a7b13d3597f77572b51073c388f614913aef1dd3ab"
+  },
+  {
+    "module": "Erdos12.Summability",
+    "start_line_in_wrapped_file": 18631,
+    "source_sha256": "5c0b4a9b902c840aaa116a1bc5bb7533126cda2c5d191e0b0d9c2d4470499bad"
+  },
+  {
+    "module": "Erdos12.Reduction",
+    "start_line_in_wrapped_file": 18720,
+    "source_sha256": "e3fc40a30db6dfb017d491df4d8c9af032b045780282477c5c70fbbab8d8299b"
+  },
+  {
+    "module": "Erdos12.PrefixReduction",
+    "start_line_in_wrapped_file": 18758,
+    "source_sha256": "f83fa2222849089f694115263bf612a8293f19d213c7d1b3b33f2fd6fef2837e"
+  },
+  {
+    "module": "Erdos12.SourceStatement",
+    "start_line_in_wrapped_file": 18806,
+    "source_sha256": "018ebb322ebfd53588f2e630a78d833ca1a0a61300b9f2080b02d9319e66323e"
+  },
+  {
+    "module": "Erdos12.Main",
+    "start_line_in_wrapped_file": 18836,
+    "source_sha256": "12ecb664be4323ea0579e4bb8b14266d98256ba4640a17f32f05e16910a52045"
+  }
+]

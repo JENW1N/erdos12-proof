@@ -1,0 +1,38 @@
+name: Lean proof verification
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      LEAN_NUM_THREADS: 2
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: leanprover/lean-action@fe408643ea7367d8c0404a8be3975bb145f5fb64
+        with:
+          build: 'true'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'true'
+          leanchecker: 'true'
+          leanchecker-args: Erdos12AllParts
+      - name: Recheck source, theorem types, and axiom dependencies
+        run: |
+          lake env lean -j 2 -M 8192 Erdos12AllParts.lean
+          lake env lean Audit.lean | tee axiom-audit.log
+          python3 - <<'PY'
+          import re
+          from pathlib import Path
+          s = Path('axiom-audit.log').read_text()
+          rows = re.findall(r"'([^']+)' depends on axioms: \[([^\]]*)\]", s)
+          assert len(rows) == 6, rows
+          for name, axioms in rows:
+              assert set(axioms.split(', ')) <= {'propext', 'Classical.choice', 'Quot.sound'}, (name, axioms)
+          PY
+      - name: Check the independently written statement
+        run: lake env lean Submission.lean

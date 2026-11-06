@@ -1,0 +1,1028 @@
+\section{A restriction estimate for sifted integers}\label{sec:restriction}
+
+Let \(\mathcal P\) be any set of primes. Define a multiplicative
+function supported on squarefree products of primes in \(\mathcal P\)
+by
+\[
+ h_{\mathcal P}(1)=1,\qquad
+ h_{\mathcal P}(d)=\prod_{p\mid d}\frac1{p-1},
+\]
+and put \(h_{\mathcal P}(d)=0\) for all other positive integers \(d\).
+For \(z\ge2\), set
+\[
+ G_{\mathcal P}(z)=\sum_{d<z}h_{\mathcal P}(d),\qquad
+ \mathcal S(N,\mathcal P,z)=
+ \{1\le n\le N:p\nmid n\text{ for every }p\in\mathcal P,\ p<z\}.
+\]
+Using strict inequalities at the sieve cutoff removes endpoint
+ambiguities.
+
+\begin{lemma}\label{lem:restriction}
+Let \(2\le z\le N^{1/4}\), and let \(\mathcal B\subseteq\T\) be
+a finite \(\delta\)-separated set. For every fixed \(q>2\) and every
+complex sequence \((a_n)\) supported on
+\(\mathcal S(N,\mathcal P,z)\),
+\begin{equation}\label{eq:restriction}
+ \left(\sum_{\xi\in\mathcal B}
+   \left|\sum_{n\le N}a_n\e(n\xi)\right|^q\right)^{1/q}
+ \ll_q
+ \left(\frac{N+\delta^{-1}}{G_{\mathcal P}(z)}
+             \sum_{n\le N}|a_n|^2\right)^{1/2}.
+\end{equation}
+The constant is uniform in \(\mathcal P\).
+\end{lemma}
+
+\begin{proof}
+We give the enveloping-sieve argument in the form needed here.
+For a parameter \(z_0\ge2\), let
+\(\mathcal P'=\mathcal P\cap[z_0,z)\), write \(h'=h_{\mathcal P'}\),
+and put \(G'=\sum_{d<z}h'(d)\). For \(p\in\mathcal P'\), define
+\[
+ u_p(n)=\frac{1-p\ind_{p\mid n}}{p-1},\qquad
+ u_d(n)=\prod_{p\mid d}u_p(n).
+\]
+The mean of \(u_p\) modulo \(p\) is zero. Its nonzero additive
+Fourier coefficients all equal \(-1/(p-1)\), and
+\[
+ u_p(n)^2=h'(p)+(h'(p)-1)u_p(n).
+\]
+Consequently the nonnegative periodic function
+\begin{equation}\label{eq:majorant}
+ \beta(n)=\frac1{(G')^2}
+       \left(\sum_{\substack{d<z\\h'(d)>0}}u_d(n)\right)^2
+\end{equation}
+equals 1 on \(\mathcal S(N,\mathcal P,z)\).
+Orthogonality and the Chinese remainder theorem show that its
+constant Fourier coefficient is \(1/G'\).
+
+A nonconstant Fourier coefficient can occur only at a reduced
+fraction \(a/\ell\), where \(\ell<z^2\) is squarefree and supported
+on \(\mathcal P'\). Its absolute value is at most
+\begin{equation}\label{eq:majorant-coeff}
+ \frac{3^{\omega(\ell)}h'(\ell)}{G'}
+ \ll \frac1{G'\sqrt{\ell}},
+\end{equation}
+where \(\omega(\ell)\) is the number of distinct prime factors.
+Indeed, in a term \(u_d u_e\), a prime dividing \(\ell\) has at
+most three membership patterns in \(d,e\), and contributes a
+coefficient of magnitude at most \(h'(p)\). A prime outside
+\(\ell\) must occur in both factors to contribute a constant
+term, which is \(h'(p)\). Summing those common factors costs
+at most \(G'\). Finally, \(3/(p-1)\le p^{-1/2}\) for all
+sufficiently large primes, and the finitely many remaining primes
+contribute an absolute factor.
+
+Separating the prime factors below \(z_0\) gives
+\begin{equation}\label{eq:G-comparison}
+ G_{\mathcal P}(z)
+ \le G'\prod_{p<z_0}(1-1/p)^{-1}
+ \ll G'\log(2z_0).
+\end{equation}
+
+For a nonzero vector \(c=(c_\xi)_{\xi\in\mathcal B}\), put
+\[
+ R=\frac{\norm{c}_1^2}{\norm{c}_2^2}\ge1,\qquad z_0=(2R)^2,
+ \qquad \eta=\min\{\delta/4,1/(4z^4)\}.
+\]
+Choose a nonnegative integrable function \(\psi\) majorizing 1
+on \([1,N]\), with Fourier transform supported on
+\([-\eta,\eta]\), integral \(O(N+\eta^{-1})\), and decay
+\(O((1+t^2)^{-1})\). One construction is an absolute multiple
+of the convolution of
+\(\ind_{[-1/\eta,N+1+1/\eta]}\) with
+\[
+ \eta\left(\frac{\sin(\pi\eta t)}{\pi\eta t}\right)^2.
+\]
+Poisson summation implies
+\[
+ \sum_{n\in\Z}\psi(n)\e(n\theta)=0
+ \quad\text{if }\norm{\theta}_{\T}>\eta,
+ \qquad
+ \left|\sum_{n\in\Z}\psi(n)\e(n\theta)\right|
+ \ll N+\eta^{-1}.
+\]
+
+Use \(\psi\beta\) to majorize the dual square sum. The constant
+coefficient of \(\beta\) contributes only when \(\xi=\xi'\).
+For a fixed ordered pair \((\xi,\xi')\), at most one reduced
+nonzero fraction \(a/\ell\), \(\ell<z^2\), can satisfy
+\(\norm{\xi-\xi'+a/\ell}_{\T}\le\eta\), since distinct such
+fractions have distance at least \(z^{-4}\).
+Every nonzero denominator in \eqref{eq:majorant-coeff} is at
+least \(z_0\). We obtain
+\[
+ \sum_{n\in\mathcal S(N,\mathcal P,z)}
+      \left|\sum_{\xi\in\mathcal B}c_\xi\e(n\xi)\right|^2
+ \ll\frac{N+\eta^{-1}}{G'}
+       \left(\norm{c}_2^2+z_0^{-1/2}\norm{c}_1^2\right).
+\]
+If \(z_0\ge z\), then \(\beta=1\) and the second term is absent.
+Since \(z^4\le N\), \(z_0^{1/2}=2R\), and
+\eqref{eq:G-comparison} holds, this gives
+\begin{equation}\label{eq:dual-restriction}
+ \sum_{n\in\mathcal S(N,\mathcal P,z)}
+      \left|\sum_{\xi\in\mathcal B}c_\xi\e(n\xi)\right|^2
+ \ll \frac{N+\delta^{-1}}{G_{\mathcal P}(z)}
+                \log(2R)\norm{c}_2^2.
+\end{equation}
+
+Write
+\[
+ U^2=\frac{N+\delta^{-1}}{G_{\mathcal P}(z)}
+                 \sum_n|a_n|^2,\qquad
+ F(\xi)=\sum_n a_n\e(n\xi).
+\]
+The one-frequency case of \eqref{eq:dual-restriction} gives
+\(\max_{\xi\in\mathcal B}|F(\xi)|\ll U\).
+For \(\mathcal E_\lambda=\{\xi\in\mathcal B:|F(\xi)|\ge\lambda U\}\),
+choose unit complex phases realizing the absolute values in the
+pairing with \(F\). Cauchy--Schwarz and
+\eqref{eq:dual-restriction} imply
+\[
+ \lambda^2|\mathcal E_\lambda|
+      \ll\log(2|\mathcal E_\lambda|)
+ \quad\text{whenever }\mathcal E_\lambda\ne\varnothing.
+\]
+Thus
+\(
+ |\mathcal E_\lambda|
+ \ll\lambda^{-2}\log(2+\lambda^{-1})
+\)
+on the bounded range where the level set is nonempty.
+Integrating this estimate against \(q\lambda^{q-1}\) proves
+\eqref{eq:restriction}.
+\end{proof}
+
+\begin{lemma}\label{lem:sieve-density}
+There are absolute constants \(c_0>0\) and \(D_0\) with the
+following properties. If \(D\ge D_0\), \(N\ge D\), and
+\(z=\tfrac12\min\{D,N^{1/4}\}\), then
+\begin{equation}\label{eq:full-density}
+ G_{\{\text{all primes}\}}(z)\gg\log D.
+\end{equation}
+If \(16\le K\le D^{c_0}\), then
+\begin{equation}\label{eq:band-density}
+ G_{\{p>4K\}}(z)\gg\frac{\log D}{\log(2K)}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put \(z_1=z^c\), where \(c>0\) is a sufficiently small absolute
+constant. In the Euler product
+\(\prod_{4K<p\le z_1}(1+1/(p-1))\), normalize the weight of each
+squarefree product to a probability distribution. A prime \(p\)
+is then selected with probability \(1/p\). The expected logarithm
+of the product is
+\[
+ \sum_{4K<p\le z_1}\frac{\log p}{p}\ll c\log z.
+\]
+Markov's inequality shows that at least half the total weight is
+carried by products smaller than \(z\), after \(c\) is fixed
+sufficiently small. Mertens' estimates give
+\[
+ \prod_{4K<p\le z_1}(1-1/p)^{-1}
+       \asymp\frac{\log z_1}{\log(2K)}.
+\]
+Choose \(c_0\) small enough that \(z_1>8K\) for all sufficiently
+large \(D\). Since \(\log z_1\gg\log D\), this proves
+\eqref{eq:band-density}. The same argument with all primes at
+most \(z_1\) proves \eqref{eq:full-density}.
+\end{proof}
+
+\section{Interaction between separated rough blocks}\label{sec:blocks}
+
+\begin{lemma}\label{lem:blocks}
+Let \(D\ge D_0\), let \(X<Y\) be powers of two with \(X\ge D\),
+and put \(K=Y/X\). Assume \(16\le K\le D^{c_0}\).
+Suppose that \(E\subseteq[X,2X)\) and \(T\subseteq[Y,2Y)\)
+are \(D\)-rough subsets of one set with Property P.
+With
+\[
+ U=\log D,\qquad u=\frac{U|E|}{X},\qquad v=\frac{U|T|}{Y},
+\]
+one has
+\begin{equation}\label{eq:blocks}
+ \sqrt u\,v\ll K^{-1/8}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The one-frequency case of Lemma~\ref{lem:restriction}, together
+with \eqref{eq:full-density}, gives \(u,v\ll1\). We may
+assume both sets are nonempty.
+
+Work on \(\Z/M\Z\), where \(M=32Y\), with normalized Fourier
+transform
+\[
+ \widehat w(\xi)=\frac1M\sum_{n\bmod M}w(n)\e(-n\xi/M).
+\]
+Function-space norms are normalized by \(M^{-1}\), while
+Fourier-space \(\ell^q\)-norms use counting measure.
+Set
+\[
+ f=U\ind_E,\qquad t=U\ind_T,\qquad
+ \alpha=\frac1M\sum_n f(n)=\frac{u}{32K}.
+\]
+Let \(k_0=K/4\), \(k_1=4K\), and \(J=[k_0,k_1]\cap\Z\).
+Define
+\[
+ b(n)=\frac1{|J|}
+       \sum_{\substack{a\in E,\ k\in J\\2ka=n}}f(a).
+\]
+All the products in this definition are smaller than \(M\).
+Its Fourier transform and mean satisfy
+\[
+ B(\xi):=\widehat b(\xi)
+     =\frac1{|J|}\sum_{k\in J}\widehat f(2k\xi),
+ \qquad \frac1M\sum_n b(n)=\alpha.
+\]
+Every prime factor of \(2k\) is at most \(4K<D\). The
+\(D\)-rough part of \(n=2ka\) is therefore exactly \(a\).
+In particular the representation determines \(a\) uniquely, and
+\begin{equation}\label{eq:b-pointwise}
+ b(n)\ll U/K.
+\end{equation}
+The support of \(b\) avoids all primes in \((4K,D]\).
+
+For \(a\in E\), put
+\[
+ I_a=[k_0a,k_1a]\cap\Z,\qquad
+ b_0(n)=\sum_{a\in E}\frac{f(a)}{|I_a|}
+              \ind_{\{n=2\ell:\ell\in I_a\}}.
+\]
+Then \(b_0\) has mean \(\alpha\), is \(O(\alpha)\) everywhere,
+and is at least \(c\alpha\) on the even integers in
+\([2Y,4Y]\). Indeed, \(|I_a|\asymp Y\), and this latter
+interval is contained in the doubled interval \(2I_a\) for
+every \(a\in E\). Write \(B_0=\widehat b_0\).
+
+\subsection*{A uniform Fourier comparison}
+We claim that
+\begin{equation}\label{eq:fourier-comparison}
+ \norm{B-B_0}_{\ell^\infty}
+       \ll\alpha u^{-1/2}K^{-2/9}.
+\end{equation}
+Fix a frequency \(\xi\), and put \(\lambda=2\xi/M\pmod1\).
+Throughout this comparison take \(q=9/4\).
+
+First suppose that
+\(\norm{h\lambda}_{\T}\ge1/(100X)\) for every
+\(1\le h\le4K\). The frequencies \(k\lambda\), \(k\in J\),
+are \(1/(100X)\)-separated. Lemma~\ref{lem:restriction},
+applied on \([1,2X]\) and normalized by \(U/M\), gives an
+\(\ell^q\)-norm \(O(\sqrt u/K)\) on these frequencies.
+H\"older's inequality then yields
+\[
+ |B(\xi)|\ll\frac{\sqrt u}{K}K^{-1/q}.
+\]
+The geometric average over \(I_a\) also gives
+\(|B_0(\xi)|\ll\alpha/K\).
+
+Otherwise, for some \(h\le4K\), reduce the nearby rational
+approximation to obtain
+\[
+ \lambda=\frac rd+\beta\pmod1,\qquad
+ (r,d)=1,\qquad d\le4K,\qquad
+ |\beta|\le\frac1{100dX}.
+\]
+If \(2\le d\le K^{1/2}\), every \(a\in E\) is a unit modulo
+\(d\), so
+\[
+ \norm{a\lambda}_{\T}
+     \ge\frac1d-2X|\beta|\ge\frac1{2d}.
+\]
+The geometric average over \(J\) therefore gives
+\(|B(\xi)|\ll\alpha d/K\ll\alpha K^{-1/2}\).
+
+If \(d>K^{1/2}\), divide \(J\) into consecutive chunks of
+length at most \(d\). Within a chunk the frequencies \(k\lambda\)
+are separated by at least \(1/(2d)\), since \(d\le4K\ll X\).
+Apply Lemma~\ref{lem:restriction} to each chunk and then
+average over \(J\). This gives
+\[
+ |B(\xi)|\ll\frac{\sqrt u}{K}d^{-1/q}
+            \ll\frac{\sqrt u}{K}K^{-1/(2q)}.
+\]
+In both cases with \(d\ge2\), the interval average defining
+\(B_0\) is bounded by
+\[
+ |B_0(\xi)|\ll\frac{\alpha d}{Y}
+                 \ll\frac{\alpha K}{Y}.
+\]
+This term is smaller than the right side of
+\eqref{eq:fourier-comparison}, after decreasing \(c_0\) if needed.
+
+It remains to consider \(d=1\). Use the lift of \(\lambda\)
+with \(|\lambda|\le1/(100X)\), and put
+\(\rho=M|\lambda|\). If \(\rho\ge K^{1/4}\), geometric
+summation gives
+\[
+ |B(\xi)|+|B_0(\xi)|\ll\alpha/\rho
+                           \ll\alpha K^{-1/4}.
+\]
+If \(\rho<K^{1/4}\), couple the uniform measure on \(I_a\)
+to the grid \(\{ka:k\in J\}\) by intervals
+\([ka,(k+1)a)\). The endpoint adjustment has total variation
+\(O(1/K)\), and the phase changes by
+\(O(a|\lambda|)=O(\rho/K)\) inside each interval. Hence
+\[
+ |B(\xi)-B_0(\xi)|\ll\alpha(1+\rho)/K.
+\]
+These bounds prove \eqref{eq:fourier-comparison}, since
+\(1/(2q)=2/9\) and \(u\ll1\).
+
+\subsection*{The forbidden correlation}
+By \eqref{eq:b-pointwise},
+\[
+ \norm b_{L^2(\Z/M\Z)}
+       \ll\alpha\sqrt{U/u}.
+\]
+Apply Lemma~\ref{lem:restriction} to \(b\), using the
+prime band \((4K,D]\), the full \(1/M\)-spaced frequency
+grid, and \eqref{eq:band-density}. The result is
+\[
+ \norm B_{\ell^q}\ll\alpha u^{-1/2}\sqrt{\log(2K)}.
+\]
+Since \(b_0\ll\alpha\), Parseval gives
+\(\norm{B_0}_{\ell^2}\ll\alpha\), and thus
+\(\norm{B_0}_{\ell^q}\ll\alpha\).
+Interpolating with \eqref{eq:fourier-comparison}, with
+\(q/9=1/4\), gives
+\begin{equation}\label{eq:fourier-nine}
+ \norm{B-B_0}_{\ell^9}
+ \ll\alpha u^{-1/2}K^{-1/6}\log(2K)^{1/8}
+ \ll\alpha u^{-1/2}K^{-1/8}.
+\end{equation}
+The full-prime restriction estimate likewise gives
+\(\norm{\widehat t}_{\ell^q}\ll\sqrt v\).
+Fourier inversion and H\"older's inequality, with exponents
+\(9\) and \(9/8\), now show that replacing \(b\) by \(b_0\) in
+\[
+ \E_{x,y\bmod M}t(x)t(y)b(x+y)
+\]
+changes the expression by at most
+\(C\alpha v u^{-1/2}K^{-1/8}\).
+
+Every element of \(T\) is odd. Thus \(x+y\) is an even
+integer in \([2Y,4Y]\) whenever \(x,y\in T\), and the expression
+with \(b_0\) is at least \(c\alpha v^2\).
+The expression with \(b\) vanishes. A nonzero term would give
+the integer equality \(x+y=2ka\) with \(x,y>a\) and \(a,x,y\)
+in the underlying set. Distinct \(x,y\) contradict Property P.
+If \(x=y\), then \(x=ka\), which is impossible because \(k\ge2\)
+is \(D\)-smooth and \(x\) is \(D\)-rough. Therefore
+\(
+ c\alpha v^2\le C\alpha v u^{-1/2}K^{-1/8}
+\),
+which proves \eqref{eq:blocks}.
+\end{proof}
+
+\section{Prime sets with inherited congruence restrictions}\label{sec:prime-tail}
+
+We use the analytic large sieve and the Brun--Titchmarsh
+inequality in their classical forms \cite{MV,MVbook}. In
+particular, if a set of primes occupies at most
+\(\vartheta\varphi(m)\) reduced residue classes modulo \(m\),
+then, for a fixed \(a>1\), \(x\ge m^a\), \(x\ge2\), and
+\(y\ge x\), partial summation gives
+\begin{equation}\label{eq:BT-mass}
+ \sum_{\substack{p\in Q\\x\le p<y}}\frac1p
+ \ll_a \vartheta
+       \left(1+\log\frac{\log y}{\log x}\right).
+\end{equation}
+Indeed, Brun--Titchmarsh bounds the counting function by
+\(O_a(\vartheta t/\log t)\) for \(t\ge x\).
+
+\begin{lemma}\label{lem:prime-uniform}
+Every set \(Q\) of primes with Property P satisfies
+\(\hrec(Q)\ll1\), with one absolute constant.
+\end{lemma}
+
+\begin{proof}
+Remove the possible prime 2, which costs at most \(1/2\).
+If the remaining set is nonempty, let \(q\) be its least
+element. The reciprocal sum over \([q,q^2]\) is \(O(1)\)
+by the ordinary upper bound for primes and partial summation.
+
+Enumerate the primes of \(Q\) greater than \(q^2\) as
+\(p_1<p_2<\cdots\), and set
+\[
+ L_0=q,\qquad L_i=qp_1\cdots p_i,\qquad
+ x_i=\max\{L_i^2,p_{i+1}\},\qquad y_i=L_{i+1}^2.
+\]
+For every earlier prime modulus \(r\in\{q,p_1,\ldots,p_i\}\),
+the later primes occupy at most one residue in each pair
+\(\{a,-a\}\) of nonzero residues modulo \(r\). Otherwise
+two distinct later primes have sum divisible by \(r\).
+The Chinese remainder theorem therefore gives a fraction
+at most \(2^{-i-1}\) of the reduced classes modulo \(L_i\).
+Moreover \(\log y_i\le3\log x_i\).
+Equation~\eqref{eq:BT-mass} bounds the mass in
+\([x_i,y_i)\) by \(O(2^{-i})\).
+These intervals cover all remaining primes of \(Q\).
+For a finite list, its last prime is smaller than the final
+product squared, so the same argument applies.
+The resulting geometric series proves the claim.
+\end{proof}
+
+\begin{lemma}\label{lem:prime-tail}
+There are absolute constants \(A_0\ge3\) and \(C\) with the
+following property. Let \(Q\subseteq[Y,\infty)\) be a set of
+primes with Property P. Let \(q_1,\ldots,q_k<Y\) be distinct
+odd primes, and set
+\[
+ M=q_1\cdots q_k,\qquad\delta=2^{-k},
+\]
+with \(M=1\) if \(k=0\). Suppose \(Y\ge M^{A_0}\) and,
+for each \(q_i\), the residues of \(Q\) occupy at most one
+member of every pair of opposite nonzero classes modulo \(q_i\).
+Then
+\begin{equation}\label{eq:prime-tail}
+ \hrec(Q)\le C\frac{\delta(1+k)}{\log(2Y)}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For bounded \(Y\), the condition \(M^{A_0}\le Y\) bounds
+\(M\) and \(k\). Lemma~\ref{lem:prime-uniform} then suffices.
+We henceforth take \(Y\) larger than a fixed absolute threshold.
+The choice of \(A_0\), made below in terms of \(c_0\), is fixed
+once and for all.
+
+The Chinese remainder theorem puts all primes of \(Q\) in at
+most \(\delta\varphi(M)\) reduced residue classes modulo \(M\).
+For any dyadic \(V\ge Y/2\), Brun--Titchmarsh gives
+\begin{equation}\label{eq:bin-density}
+ |Q\cap[V,2V)|\ll\frac{\delta V}{\log V}.
+\end{equation}
+Here \(M\le Y^{1/A_0}\), and \(A_0\ge3\).
+For \(M=1\), use the ordinary prime upper bound.
+We will also use
+\begin{equation}\label{eq:delta-lower}
+ \delta\ge M^{-1}\ge Y^{-1/A_0}.
+\end{equation}
+
+Call the dyadic bin at \(V=2^j\) \emph{light} if its
+cardinality is at most \(\delta V/j^2\). All light bins
+together contribute \(O(\delta/\log Y)\) to \(\hrec(Q)\).
+If there is no other bin, the proof is complete.
+
+Let \([U,2U)\), \(U=2^J\), be the first bin that is not
+light, and put \(n=|Q\cap[U,2U)|>\delta U/J^2\).
+Choose
+\[
+ s=\lceil8\log_2J\rceil
+\]
+distinct primes from that bin. This is possible for all
+sufficiently large \(Y\), by \eqref{eq:delta-lower}.
+Let \(L\) be \(M\) times their product, and set
+\[
+ V_0=U J^8\delta^{-8}.
+\]
+Choose \(A_0\) sufficiently large that, uniformly for
+\(U\ge Y/2\),
+\begin{equation}\label{eq:near-range}
+ 4V_0/U\le(U/2)^{c_0}
+\end{equation}
+for all sufficiently large \(Y\). This follows from
+\eqref{eq:delta-lower}. The same range gives \(L>V_0\).
+
+\subsection*{The near range}
+Take \(D=U/2\). In dyadic bins meeting \([U,V_0]\), every
+prime is \(D\)-rough. The normalized count
+\[
+ w_V=\frac{\log D}{V}|Q\cap[V,2V)|
+\]
+is \(O(\delta)\), by \eqref{eq:bin-density}.
+If two such counts are at least \(w>0\), then
+Lemma~\ref{lem:blocks} bounds their ratio of scales by
+\(O(w^{-12})\), unless the scales differ by a factor less
+than 16. The hypotheses of that lemma hold throughout
+the range by \eqref{eq:near-range}.
+It follows that
+\[
+ \#\{V:w_V\ge w\}\ll1+\log(C/w).
+\]
+Integrating this bound over \(0<w\ll\delta\) gives
+\begin{equation}\label{eq:near-mass}
+ \hrec(Q\cap[U,V_0])
+ \ll\frac{\delta(1+\log(1/\delta))}{\log U}.
+\end{equation}
+
+\subsection*{The middle range}
+Let \(T=Q\cap[V,2V)\), where \(V>2U\).
+For every prime \(p\in Q\cap[U,2U)\), the set \(T\)
+occupies at most \((p-1)/2\) classes modulo \(p\).
+Orthogonality and Cauchy--Schwarz give
+\[
+ \sum_{j=1}^{p-1}
+      \left|\sum_{t\in T}\e(jt/p)\right|^2
+ \ge |T|^2.
+\]
+The reduced fractions \(j/p\) belonging to different such
+primes are distinct and have spacing at least \(1/(4U^2)\).
+The analytic large sieve therefore gives
+\[
+ n|T|^2\ll(V+U^2)|T|,
+ \qquad
+ \hrec(T)\ll\frac1n+\frac{U^2}{Vn}.
+\]
+Summing over bins meeting \([V_0,L]\), including the
+at most two boundary bins, yields
+\begin{equation}\label{eq:middle-mass}
+ \hrec(Q\cap[V_0,L])
+ \ll\frac{sJ^3}{\delta U}+\frac{\delta^7}{J^6}
+ \ll\frac{\delta}{J}.
+\end{equation}
+For the first inequality use \(\log L=O(sJ)\) and
+\(n>\delta U/J^2\). For the second, divide by
+\(\delta/J\) and use
+\[
+ \frac{sJ^4}{\delta^2U}+\frac{\delta^6}{J^5}=o(1),
+\]
+uniformly in the permitted range, by \eqref{eq:delta-lower}.
+
+\subsection*{The far range}
+On \((L,L^2]\), use the external \(q_i\) and the
+\(\lfloor s/2\rfloor\) smallest selected internal primes as
+moduli. Their product is at most \(\sqrt{ML}\), hence at
+most \(L^{2/3}\) for sufficiently large \(Y\). The occupied
+fraction of reduced classes is at most
+\(\delta2^{-\lfloor s/2\rfloor}\). Equation~\eqref{eq:BT-mass}
+therefore bounds the mass in this range by
+\(O(\delta2^{-\lfloor s/2\rfloor})\).
+
+Enumerate the primes of \(Q\) above \(L^2\) as
+\(p_1<p_2<\cdots\), and now put \(L_i=Lp_1\cdots p_i\),
+with \(L_0=L\). The primes in \([L_i^2,L_{i+1}^2)\) are
+at least \(p_{i+1}\), and occupy at most the fraction
+\(\delta2^{-s-i}\) of the reduced classes modulo \(L_i\).
+With
+\[
+ x_i=\max\{L_i^2,p_{i+1}\},\qquad y_i=L_{i+1}^2,
+\]
+one has \(\log y_i\le3\log x_i\). Another application
+of \eqref{eq:BT-mass} gives mass \(O(\delta2^{-s-i})\).
+As in Lemma~\ref{lem:prime-uniform}, these intervals also
+cover every term of a finite list. Altogether the far
+range contributes
+\[
+ O(\delta2^{-s/2})=O(\delta/J).
+\]
+Combine this with the light-bin bound, \eqref{eq:near-mass},
+and \eqref{eq:middle-mass}. Since
+\(\log(1/\delta)=k\log2\) and \(\log U\gg\log Y\),
+we obtain \eqref{eq:prime-tail}.
+\end{proof}
+
+\section{Prime-factor prefixes}\label{sec:prefixes}
+
+Let \(A\) be an odd primitive set with Property P.
+If \(1\in A\), then \(A=\{1\}\), so suppose \(1\notin A\).
+For each positive integer \(g\), define
+\[
+ Q_g=\{p\text{ prime}:p\ge\Pmax(g),\ gp\in A\}.
+\]
+Each \(Q_g\) has Property P, and all its primes are odd.
+Every element of \(A\) has a unique representation \(gp\)
+in which \(p\) is its largest prime factor. Hence
+\begin{equation}\label{eq:fibre-decomposition}
+ \hrec(A)=\sum_{g\ge1}\frac{\hrec(Q_g)}g.
+\end{equation}
+The term at \(g=1\) is \(O(1)\), by
+Lemma~\ref{lem:prime-uniform}.
+
+Independently for all primes \(p\), let \(V_p\) have
+geometric distribution
+\[
+ \Prob(V_p=j)=(1-1/p)p^{-j},\qquad j=0,1,2,\ldots.
+\]
+Form the ordered list consisting of \(V_p\) copies of \(p\),
+with primes in increasing order. A \emph{prefix product}
+is the product of an initial finite segment of this list.
+
+\begin{lemma}\label{lem:prefix-probability}
+For \(g>1\), the probability that \(g\) is a prefix product is
+\begin{equation}\label{eq:prefix-probability}
+ \mu_g=\frac1g\prod_{p<\Pmax(g)}(1-1/p)
+           \asymp\frac1{g\log(2\Pmax(g))}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Put \(r=\Pmax(g)\). For primes \(p<r\), the valuation
+\(V_p\) must equal \(v_p(g)\). At \(r\), the condition is
+\(V_r\ge v_r(g)\), which has probability \(r^{-v_r(g)}\).
+Independence gives the exact formula, and Mertens' product
+estimate gives the comparison.
+\end{proof}
+
+Assign to a prefix \(g>1\) the score
+\[
+ W_g=\log(2\Pmax(g))\,\hrec(Q_g).
+\]
+Tonelli's theorem and \eqref{eq:prefix-probability} show
+that it is enough to prove
+\begin{equation}\label{eq:expected-score}
+ \E\sum_{\substack{g>1\\g\text{ a prefix}}}W_g\ll1.
+\end{equation}
+Lemma~\ref{lem:prime-tail} with \(k=0\) gives \(W_g\ll1\).
+More precisely, if \(Q_g\ne\varnothing\) and
+\(p_g=\min Q_g\), then
+\begin{equation}\label{eq:score-basic}
+ W_g\ll\frac{\log(2\Pmax(g))}{\log(2p_g)}.
+\end{equation}
+We reserve \(p_g\) for this least terminal prime and use
+\(r=\Pmax(g)\) for the prime coordinate of the prefix.
+
+We may omit scores produced by the second or a later
+copy of a prime. Their total expectation is bounded by
+\[
+ C\sum_p\E(V_p-1)_+
+     =C\sum_p\frac1{p(p-1)}<\infty.
+\]
+The omitted copies remain in the list and in all later
+prefix products. Scores at primes below any fixed absolute
+threshold also have bounded total expectation.
+Thus only the first copy at each sufficiently large
+prime coordinate needs to be considered.
+
+\begin{lemma}\label{lem:inheritance}
+Suppose \(h\) and \(g\) are prefix products on one path,
+\(h\) occurs earlier, \(Q_h,Q_g\ne\varnothing\), and
+\(\Pmax(g)>p_h\). Then the residues of \(Q_g\) occupy
+at most one class from each opposite pair of nonzero
+classes modulo \(p_h\). The terminal primes \(p_h\)
+from distinct nonempty prefixes on a path are distinct.
+\end{lemma}
+
+\begin{proof}
+We have \(h\mid g\). If \(p_h\mid g/h\), then
+\(hp_h\in A\) divides every \(gp\in A\), \(p\in Q_g\).
+These are distinct elements because \(\Pmax(g)>p_h\),
+contrary to primitivity. Thus \((g/h,p_h)=1\).
+All primes in \(Q_g\) exceed \(p_h\).
+For distinct \(p,p'\in Q_g\), the congruence
+\(p+p'\equiv0\pmod{p_h}\) would now imply
+\[
+ hp_h\mid gp+gp',
+\]
+with both summands larger than \(hp_h\), contradicting
+Property P. This proves the first assertion.
+If two distinct nested prefixes \(h_1\mid h_2\) had the
+same terminal prime \(p\), then the distinct elements
+\(h_1p,h_2p\in A\) would contradict primitivity.
+\end{proof}
+
+\section{An adapted summation of prefix scores}\label{sec:scheduling}
+
+We process every prime coordinate \(r\) in increasing order,
+including coordinates for which \(V_r=0\). At coordinate
+\(r\), reveal \(V_r\), retain all its copies in the prefix
+product, and score the first copy if \(V_r\ge1\).
+Let \(A_0\) be the exponent in Lemma~\ref{lem:prime-tail}.
+The following scheduling rule uses selected terminal
+primes as congruence moduli, which we call \emph{guards}.
+
+After \(k\) guards have been activated, write \(M\) for
+their product and \(\delta=2^{-k}\). A \emph{ready stage}
+starts at the first unprocessed prime at least \(R\),
+where \(R\ge M^{A_0}\) is determined by the previously
+revealed coordinates. Initially \(k=0\) and \(R\) is a
+fixed sufficiently large absolute threshold. A stage
+starts with no pending guard.
+
+At a scored prefix \(g\) with \(Q_g\ne\varnothing\),
+schedule \(p_g\), retaining the smallest pending prime.
+If the newly scheduled minimum equals the current
+coordinate, activate it immediately after scoring.
+A guard already pending when its coordinate is reached
+is activated before revealing that coordinate, so that
+the coordinate belongs to the delay described below.
+The stage ends on activation.
+
+Every finite pending prime is eventually reached, since
+all prime coordinates are processed. A ready stage that
+never activates therefore has no nonempty scored prefix.
+The guard selected in a completed stage arose from a
+previously visited prefix. Lemma~\ref{lem:inheritance}
+shows that the old guards impose the required opposite-class
+restrictions on every nonempty fibre in that ready stage.
+They are distinct and smaller than its current coordinate.
+
+At a nonempty scored prefix \(g\) with \(r=\Pmax(g)\),
+Lemma~\ref{lem:prime-tail}, applied with \(Y=p_g\ge r\),
+gives
+\begin{equation}\label{eq:score-guarded}
+ W_g\ll \delta(1+k)\frac{\log r}{\log p_g}.
+\end{equation}
+The harmless factors 2 in \eqref{eq:score-basic} are
+absorbed by the fixed lower threshold for \(r\).
+
+\begin{lemma}\label{lem:ready-cost}
+Conditional on the history at the start of a ready
+stage with \(k\) active guards, the expected total score
+in that stage is \(O(2^{-k}(1+k))\).
+\end{lemma}
+
+\begin{proof}
+Call a change of the pending minimum \emph{large} if its
+logarithm decreases by a factor of at least 2. The first
+finite pending value is counted as large.
+At consecutive large changes, the ratio
+\(\log r/\log p_g\) at least doubles, since \(r\)
+increases and the pending logarithm halves.
+Every such ratio is at most 1 before activation.
+Thus the sum of these ratios over all large changes
+is at most 2 on every path. Their total score is bounded
+by \(C\delta(1+k)\), by \eqref{eq:score-guarded}.
+
+For all other nonempty scored prefixes, let \(P_{\rm old}\)
+be the pending prime known before revealing \(V_r\).
+Then
+\[
+ \frac{\log r}{\log p_g}
+       \le2\frac{\log r}{\log P_{\rm old}}.
+\]
+Interpret the right side as zero when no finite prime
+is pending. In that case the first nonempty prefix
+has already been assigned to the large-change class.
+
+Both readiness at \(r\) and \(P_{\rm old}\) are measurable
+before \(V_r\) is revealed. A first-copy score at \(r\)
+can occur only if \(V_r\ge1\), an event of conditional
+probability \(1/r\).
+If \(P_*\) is the prime eventually activated, every ready
+coordinate is at most \(P_*\), and every previous finite
+pending value is at least \(P_*\). Consequently, pathwise,
+\begin{equation}\label{eq:predictable-budget}
+ \sum_{\substack{r\text{ ready}\\P_{\rm old}<\infty}}
+       \frac1r\frac{\log r}{\log P_{\rm old}}
+ \le\frac1{\log P_*}
+       \sum_{\substack{r\le P_*\\r\text{ prime}}}
+                         \frac{\log r}{r}
+ \ll1.
+\end{equation}
+For a stage without activation the sum is zero.
+Taking conditional expectation before each coordinate,
+and then applying Tonelli, proves the same
+\(O(\delta(1+k))\) bound for all remaining scores.
+\end{proof}
+
+After activating \(P_*\), put \(M_{\rm new}=MP_*\).
+Process the remaining coordinates below \(M_{\rm new}^{A_0}\)
+as a \emph{delay}, then start the next ready stage at the
+first unprocessed prime at least that threshold.
+The old guards remain valid throughout the delay.
+
+\begin{lemma}\label{lem:delay-cost}
+Conditional on the activation history, the expected
+total score in the delay is \(O(2^{-k}(1+k))\).
+\end{lemma}
+
+\begin{proof}
+Equation~\eqref{eq:score-guarded} bounds every scored
+prefix during the delay by \(C\delta(1+k)\), using
+\(\log r/\log p_g\le1\) and the old guards.
+Moreover \(M^{A_0}\le R\le P_*\), so
+\[
+ M_{\rm new}^{A_0}
+       =(MP_*)^{A_0}\le P_*^{A_0+1}.
+\]
+Conditional on the activation history, all strictly
+later prime coordinates retain their independent
+geometric laws. Their expected number of first copies
+before the next ready stage is at most
+\[
+ \sum_{\substack{P_*<r\le P_*^{A_0+1}\\r\text{ prime}}}\frac1r
+       =O_{A_0}(1)
+\]
+by Mertens' estimate. If \(P_*\) was pending before its
+coordinate, that coordinate is also in the delay and
+contributes at most one additional score. If the guard
+was scheduled at its own coordinate, that score was
+already counted in the ready stage.
+This proves the claim.
+\end{proof}
+
+\begin{proposition}\label{prop:odd-primitive}
+Every odd primitive set \(A\) with Property P satisfies
+\(\hrec(A)\ll1\), with one absolute constant.
+\end{proposition}
+
+\begin{proof}
+Stage-start and activation histories are measurable at
+their respective prime coordinates. The conditional
+expectation statements in Lemmas~\ref{lem:ready-cost}
+and \ref{lem:delay-cost} can therefore be applied on
+each event specifying these coordinates. All such
+coordinates are countable, and the rule never conditions
+on a future valuation.
+
+Each completed ready stage adds one new guard. Summing
+the two lemmas over \(k\ge0\), and restoring the omitted
+small-prime and repeated-copy scores, gives
+\[
+ \E\sum_{\substack{g>1\\g\text{ a prefix}}}W_g
+ \ll1+\sum_{k\ge0}2^{-k}(1+k)<\infty.
+\]
+Equation~\eqref{eq:expected-score}, Lemma~\ref{lem:prefix-probability},
+and the decomposition \eqref{eq:fibre-decomposition}
+complete the proof.
+\end{proof}
+
+\section{Completion of the proof}\label{sec:completion}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+It is enough to bound \(\hrec(B)\) uniformly for finite
+sets \(B\) with Property P. Let \(C\subseteq B\) consist
+of the elements minimal under divisibility.
+Every \(b\in B\setminus C\) has a proper divisor in \(C\).
+Assign \(b\) to one such divisor \(c\).
+No \(c\) receives two distinct elements, since it
+would divide their sum and both would exceed it.
+Every assigned \(b\) is at least \(2c\). Hence
+\begin{equation}\label{eq:primitive-reduction}
+ \hrec(B)\le\frac32\hrec(C).
+\end{equation}
+The set \(C\) is primitive.
+
+For \(v\ge0\), define
+\[
+ C_v=\{c/2^v:c\in C,\ v_2(c)=v\}.
+\]
+Each \(C_v\) is an odd primitive set with Property P.
+Proposition~\ref{prop:odd-primitive} supplies one constant
+\(C_{\rm odd}\) bounding all their reciprocal sums,
+including the possible singleton \(\{1\}\).
+Therefore
+\[
+ \hrec(B)\le\frac32\sum_{v\ge0}2^{-v}\hrec(C_v)
+                \le3C_{\rm odd}.
+\]
+This bound is independent of \(B\). Apply it to the
+finite truncations of an arbitrary \(A\), and use
+monotone convergence to obtain \eqref{eq:main}.
+\end{proof}
+
+\section{An explicit finite prefix bound}\label{sec:finite-prefix}
+
+We give a finite formulation of the argument in
+Section~\ref{sec:scheduling}, with explicit bounds for the total expected
+score. Fix an odd primitive set \(B\subseteq[2,N]\) with Property P.
+In this section, the fibres \(Q_g\) and scores \(W_g\) are defined using
+\(B\) in place of \(A\). Independently for each prime \(p\le N\), choose
+\(X_p\in\{0,1,\ldots,N+1\}\) with
+\[
+ \Prob(X_p=j)=(1-1/p)p^{-j}\quad(0\le j<N+1),\qquad
+ \Prob(X_p=N+1)=p^{-(N+1)}.
+\]
+For \(0\le a\le N+1\), summing the geometric series gives
+\(\Prob(X_p\ge a)=p^{-a}\). Thus, for every \(2\le g\le N\), the event
+that \(g\) is a prefix has exactly the probability in
+Lemma~\ref{lem:prefix-probability}. Every expectation in this section is
+a finite sum.
+
+Apply the scheduling rule of Section~\ref{sec:scheduling}, processing
+integer times \(r=1,\ldots,N\) and changing the state only at prime
+coordinates. Charge an activation coordinate using its incoming set
+of guards. Let \(k_r\) be the number of guards activated before time
+\(r\), and put
+\[
+ w_k=2^{-k}(1+k),\qquad R_k=2^{-k}(2k+4),\qquad
+ a_r=R_{k_r}-R_{k_{r+1}}.
+\]
+Since \(R_0=4\) and \(R_k-R_{k+1}=w_k\), the quantity \(a_r\) is
+\(w_{k_r}\) at an activation and zero otherwise. In particular,
+\begin{equation}\label{eq:finite-activation}
+ \sum_{r=1}^N a_r\le4.
+\end{equation}
+Choose \(C_{\rm tail}\) uniformly in the prime-tail estimate so that
+\(W_g\le C_{\rm tail}\) and, for a ready first-copy prefix with
+\(r=\Pmax(g)\),
+\[
+ W_g\le C_{\rm tail}w_{k_r}
+       \frac{\log(2r)}{\log(2p_g)}
+ \le 2C_{\rm tail}w_{k_r}\frac{\log r}{\log p_g}.
+\]
+Increase the fixed initial threshold if necessary.
+
+\subsection{The ready coordinates}
+
+If the pending terminal prime before time \(r\) is \(P\), define
+\[
+ U_r=w_{k_r}\frac{\log r}{\log P},\qquad
+ T_r=\frac{w_{k_r}}{\log P}
+           \sum_{\substack{p<r\\p\ \mathrm{prime}}}\frac{\log p}{p}.
+\]
+Set both quantities to zero when no prime is pending. A pending prime
+is at least the current coordinate. Between activations its value can
+only decrease.
+
+Write \(W_r^{(1)}\) for the first-copy score charged at a ready time,
+and set it to zero at other times. Then
+\begin{equation}\label{eq:finite-ready-charge}
+ W_r^{(1)}\le 4C_{\rm tail}
+ \left(\ind_{\{X_r\ge1\}}U_r+U_{r+1}-U_r+2a_r\right),
+\end{equation}
+where the indicator is zero at a composite time. To verify this
+inequality, first suppose that no activation occurs. If a nonempty
+prefix is scored, the new pending prime is at most its terminal prime
+\(p_g\), and consequently
+\[
+ U_{r+1}\ge w_{k_r}\frac{\log r}{\log p_g}.
+\]
+On this event the first three terms in parentheses in
+\eqref{eq:finite-ready-charge} sum to \(U_{r+1}\). If no score occurs,
+\(U_{r+1}\ge U_r\). At an activation, \(U_{r+1}=0\),
+\(U_r\le w_{k_r}\), and \(a_r=w_{k_r}\), so the activation term
+covers both the lost potential and the score. During a delay there is
+no pending prime and these quantities are zero.
+
+The state before time \(r\) depends only on earlier coordinates.
+Independence therefore gives, for prime \(r\),
+\[
+ \E\left[\ind_{\{X_r\ge1\}}U_r\right]=\frac1r\E U_r.
+\]
+Choose \(C_{\log}>0\) such that
+\(\sum_{p\le x}(\log p)/p\le C_{\log}\log x\) for \(x\ge2\).
+The weighted prime sum and the monotonicity of the pending minimum
+imply
+\begin{equation}\label{eq:finite-prime-potential}
+ \ind_{\{r\text{ prime}\}}\frac{U_r}{r}
+ \le T_{r+1}-T_r+C_{\log}a_r.
+\end{equation}
+Indeed, without activation the increment of the numerator accounts
+for \((\log r)/r\), and a decrease of the denominator increases the
+potential. At an activation, the numerator through time \(r\) is at
+most \(C_{\log}\log P\), so the lost potential together with the
+current summand is at most \(C_{\log}w_{k_r}\).
+
+Every terminal prime of a nonempty fibre is at most \(N\). Hence no
+prime is pending after time \(N\), and both potentials begin and end
+at zero. Summing \eqref{eq:finite-prime-potential} and using
+\eqref{eq:finite-activation} gives
+\[
+ \sum_{r=1}^N\E\left[\ind_{\{X_r\ge1\}}U_r\right]
+ \le4C_{\log}.
+\]
+Summation of \eqref{eq:finite-ready-charge} now bounds the expected
+ready contribution by
+\begin{equation}\label{eq:finite-ready-total}
+ C_{\rm tail}(32+16C_{\log}).
+\end{equation}
+
+\subsection{The delayed coordinates}
+
+Suppose that the latest activation was at a prime \(P\), with \(j\)
+guards active before that activation and old product \(M\). Put
+\(H=(MP)^{A_0}\). The inequality \(M^{A_0}\le P\) gives
+\(H\le P^{A_0+1}\). Mertens' estimate supplies an absolute constant
+\(C_{\rm delay}>0\), depending only on the fixed \(A_0\), such that
+\[
+ \sum_{\substack{P\le p<P^{A_0+1}\\p\ \mathrm{prime}}}\frac1p
+ \le C_{\rm delay}
+\]
+for every possible activation prime \(P\). Define the accumulated
+mass after this activation by
+\[
+ B_r=w_j\sum_{\substack{P\le p<\min(r,H)\\p\ \mathrm{prime}}}\frac1p.
+\]
+Then \(0\le B_r\le C_{\rm delay}w_j\). For \(k_r\ge1\), so that
+\(j=k_r-1\), set
+\[
+ D_r=C_{\rm delay}R_{k_r}+C_{\rm delay}w_{k_r-1}-B_r.
+\]
+Before the first activation set \(D_r=C_{\rm delay}R_0\).
+These quantities are nonnegative. At a delayed prime coordinate the
+increment of \(B_r\) is \(w_j/r\), so \(D_r\) decreases by that amount.
+At a ready coordinate without activation it is constant.
+
+At a new activation, the previous remaining term
+\(C_{\rm delay}w_{k_r-1}-B_r\) is nonnegative. The new value satisfies
+\[
+ D_{r+1}\le C_{\rm delay}(R_{k_r+1}+w_{k_r})
+           =C_{\rm delay}R_{k_r}\le D_r.
+\]
+Thus the total predictable delayed cost is at most
+\(D_1=4C_{\rm delay}\). Each delayed first-copy score is at most
+\(C_{\rm tail}w_j\), and its occurrence has conditional probability
+\(1/r\). Its total expected contribution is therefore at most
+\begin{equation}\label{eq:finite-delay-total}
+ 4C_{\rm tail}C_{\rm delay}.
+\end{equation}
+
+The finitely many initial coordinates contribute an absolute
+constant. The repeated-copy contribution is bounded using
+\[
+ \sum_p\E(X_p-1)_+
+ \le\sum_p\frac1{p(p-1)}<\infty.
+\]
+Combining these estimates with \eqref{eq:finite-ready-total} and
+\eqref{eq:finite-delay-total} yields a bound for
+\(\E\sum_{g\text{ a prefix}}W_g\) independent of \(B\) and \(N\).
+Lemma~\ref{lem:prefix-probability} and
+\eqref{eq:fibre-decomposition} then give the uniform reciprocal bound
+for finite odd primitive sets. Section~\ref{sec:completion} extends it
+to all sets with Property P.
+

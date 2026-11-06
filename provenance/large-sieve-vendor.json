@@ -1,0 +1,22 @@
+{
+  "known_scope": "Large sieve with a logarithmic factor in the spacing term",
+  "files": [
+    "Additive.lean",
+    "GeomSum.lean",
+    "Duality.lean",
+    "WellSpaced.lean"
+  ],
+  "verification_status": "Four modules locally compiled; primal and dual endpoints pass the transitive axiom audit",
+  "repository": "https://github.com/subfish-zhou/goldbach-lean",
+  "commit": "9d4c3a4010d42aedd9e7231bf94386019cfffccc",
+  "license": "Apache-2.0",
+  "compatibility_changes": [
+    "Replaced two deprecated if_pos names and one if_neg name"
+  ],
+  "local_sha256": {
+    "Additive.lean": "a4035fd53ec86b44ac25d87619ef8551adc673ecfb5754e82c1563b2272c488f",
+    "GeomSum.lean": "ef8cb8c0eb6107d800f37deb4f09c4f626a7321d8fabfe295151ce789427ef7c",
+    "Duality.lean": "e042f5060f7ad01c8b6e69d875c95525371901349243103af91782714040be14",
+    "WellSpaced.lean": "7fc0abc4a3b1bb7b09e0f868b116e98ca59ffde65b08a09979cc7b98442760d3"
+  }
+}
