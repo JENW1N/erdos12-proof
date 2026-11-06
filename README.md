@@ -83,6 +83,12 @@ build/checker logs. A local self-check is not organizer acceptance or peer revie
 
 To render the paper, run `tectonic main.tex` from `paper/`.
 
+## Verification evidence
+
+See [the fixed-version verification report](verification/report.md) and its
+source-build, axiom, kernel-replay, and external-checker logs. The report names
+the exact proof commit it checks.
+
 ## Review and submission status
 
 This repository publishes the authors' proof for mathematical and formal review.

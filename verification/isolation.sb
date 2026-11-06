@@ -1,0 +1,12 @@
+(version 1)
+(allow default)
+(deny network*)
+(deny file-write*)
+(allow file-write* (subpath "/Users/jenwin/Documents/Codex/2026-11-05/can/work/justin-sun/verification") (literal "/dev/null"))
+(deny file-read* (subpath "/Users"))
+(allow file-read-metadata)
+(allow file-read*
+ (subpath "/Users/jenwin/Documents/Codex/2026-11-05/can/work/justin-sun/verification")
+ (subpath "/Users/jenwin/.elan/toolchains/leanprover--lean4---v4.35.0-rc2")
+ (subpath "/Users/jenwin/Documents/Codex/2026-11-02/can-you-professionally-writeup-our-solution/work/environment/.lake/packages")
+ (subpath "/Users/jenwin/Documents/Codex/2026-11-05/can/work/justin-sun/awards/skills/lean-verify"))

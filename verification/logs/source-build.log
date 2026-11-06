@@ -1,0 +1,48 @@
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Erdos12AllParts.part_i : Erdos12AllParts.PartI
+theorem Erdos12AllParts.part_i : Erdos12AllParts.PartI :=
+Erdos12PriorI.target_theorem_0.mp True.intro
+'Erdos12AllParts.part_i' depends on axioms: [propext, Classical.choice, Quot.sound]
+Erdos12AllParts.part_ii : ¬Erdos12AllParts.UniversalPowerSaving
+theorem Erdos12AllParts.part_ii : ¬Erdos12AllParts.UniversalPowerSaving :=
+fun h => Erdos12PriorII.target_theorem_0.mpr h
+'Erdos12AllParts.part_ii' depends on axioms: [propext, Classical.choice, Quot.sound]
+Erdos12AllParts.part_iii : Erdos12AllParts.PartIII
+theorem Erdos12AllParts.part_iii : Erdos12AllParts.PartIII :=
+Erdos12Proof.erdos_12_iii
+'Erdos12AllParts.part_iii' depends on axioms: [propext, Classical.choice, Quot.sound]
+Erdos12AllParts.all_parts : Erdos12AllParts.PartI ∧ ¬Erdos12AllParts.UniversalPowerSaving ∧ Erdos12AllParts.PartIII
+theorem Erdos12AllParts.all_parts : Erdos12AllParts.PartI ∧
+  ¬Erdos12AllParts.UniversalPowerSaving ∧ Erdos12AllParts.PartIII :=
+⟨Erdos12AllParts.part_i, ⟨Erdos12AllParts.part_ii, Erdos12AllParts.part_iii⟩⟩
+'Erdos12AllParts.all_parts' depends on axioms: [propext, Classical.choice, Quot.sound]
+Erdos12AllParts.parameterwise_dense : ∀ (c : ℝ),
+  0 < c → c < 1 → ∃ A, Erdos12AllParts.IsGood A ∧ ∃ N₀, ∀ N ≥ N₀, ↑N ^ (1 - c) ≤ ↑(A ∩ Set.Icc 1 N).ncard
+theorem Erdos12AllParts.parameterwise_dense : ∀ (c : ℝ),
+  0 < c → c < 1 → ∃ A, Erdos12AllParts.IsGood A ∧ ∃ N₀, ∀ N ≥ N₀, ↑N ^ (1 - c) ≤ ↑(A ∩ Set.Icc 1 N).ncard :=
+fun c hc hc1 =>
+  Exists.casesOn (Erdos12PriorII.exists_sarkozy_seq c hc hc1) fun B h =>
+    Exists.casesOn h fun p hB =>
+      Exists.intro (⋃ n, B n)
+        ⟨Erdos12PriorII.sarkozy_implies_good hB, Filter.eventually_atTop.mp hB.right.right.right.right.right.right⟩
+'Erdos12AllParts.parameterwise_dense' depends on axioms: [propext, Classical.choice, Quot.sound]
+Erdos12AllParts.uniform_reciprocal_bound : ∃ C,
+  ∀ (A : Set ℕ), Erdos12Proof.PropertyP A → (Summable fun n => 1 / ↑↑n) ∧ ∑' (n : ↑A), 1 / ↑↑n ≤ C
+theorem Erdos12AllParts.uniform_reciprocal_bound : ∃ C,
+  ∀ (A : Set ℕ), Erdos12Proof.PropertyP A → (Summable fun n => 1 / ↑↑n) ∧ ∑' (n : ↑A), 1 / ↑↑n ≤ C :=
+Erdos12Proof.uniform_bound_implies_strong_statement
+  (Erdos12Proof.odd_primitive_bound_implies_uniform
+    (Erdos12Proof.prefix_score_bound_implies_odd_primitive_bound Erdos12Proof.prefix_score_bound))
+'Erdos12AllParts.uniform_reciprocal_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PrizeTarget.all_parts' depends on axioms: [propext, Classical.choice, Quot.sound]

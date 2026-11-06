@@ -6,3 +6,4 @@
 *.trace
 .DS_Store
 __pycache__/
+.verification-output/

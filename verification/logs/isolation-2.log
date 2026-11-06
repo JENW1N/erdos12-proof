@@ -1,0 +1,3 @@
+outside-read PermissionError [Errno 1] Operation not permitted: '/Users/jenwin/Documents/Codex/2026-11-05/can/work/justin-sun/outside-probe.txt'
+outside-write PermissionError [Errno 1] Operation not permitted: '/Users/jenwin/Documents/Codex/2026-11-05/can/work/justin-sun/outside-probe.txt'
+network PermissionError [Errno 1] Operation not permitted

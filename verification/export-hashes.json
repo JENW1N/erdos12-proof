@@ -1,0 +1,16 @@
+{
+  "source_commit": "f959d3865c3a604cfdc2a925a29a1b66f2ad6477",
+  "exports": [
+    {
+      "file": "challenge.ndjson",
+      "bytes": 73173190,
+      "sha256": "acd397d4fcea3b0d99ca3d2f69b64cdfaa12e41e5cd9e3b755be0e508517f1ba"
+    },
+    {
+      "file": "solution.ndjson",
+      "bytes": 492622285,
+      "sha256": "e7acf2db0ebecf0532aa8c60b8464a00b80768014a46add1571cc54a3d011fbc"
+    }
+  ],
+  "storage": "Generated exports retained locally; reproduce with export-and-compare.sh. Complete checker logs are committed."
+}

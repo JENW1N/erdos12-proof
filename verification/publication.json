@@ -1,0 +1,19 @@
+{
+  "proof_commit": "f959d3865c3a604cfdc2a925a29a1b66f2ad6477",
+  "branch": "main",
+  "remote_tip": "f959d3865c3a604cfdc2a925a29a1b66f2ad6477",
+  "files": [
+    {
+      "path": "Erdos12AllParts.lean",
+      "url": "https://raw.githubusercontent.com/JENW1N/erdos12-proof/f959d3865c3a604cfdc2a925a29a1b66f2ad6477/Erdos12AllParts.lean",
+      "bytes": 968266,
+      "sha256": "5e39f16891198564ecf64624f2be03d0a4eec942f72dda3018dc153471e2b0fb"
+    },
+    {
+      "path": "paper/erdos12-all-parts.pdf",
+      "url": "https://raw.githubusercontent.com/JENW1N/erdos12-proof/f959d3865c3a604cfdc2a925a29a1b66f2ad6477/paper/erdos12-all-parts.pdf",
+      "bytes": 182536,
+      "sha256": "e79e2f3b831d67461bdcc8cbe8453c2f24beb0fc361acf32fc5c07c360a7b014"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "source_sha256": "5e39f16891198564ecf64624f2be03d0a4eec942f72dda3018dc153471e2b0fb",
+  "scan": {
+    "\\bsorry\\b": false,
+    "\\badmit\\b": false,
+    "\\baxiom\\b": false,
+    "\\bunsafe\\b": false,
+    "\\bnative_decide\\b": false,
+    "\\bimplemented_by\\b": false,
+    "\\bextern\\b": false,
+    "debug\\.skipKernelTC": false,
+    "\\binitialize\\b": false
+  },
+  "imports": [
+    "import Mathlib"
+  ],
+  "transitive_axiom_check_required": true
+}

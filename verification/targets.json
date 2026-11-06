@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "project": {
+    "root": "/Users/jenwin/Documents/Codex/2026-11-05/can/work/justin-sun/verification/source",
+    "repository": "https://github.com/JENW1N/erdos12-proof",
+    "branch": "main",
+    "commit": "f959d3865c3a604cfdc2a925a29a1b66f2ad6477",
+    "toolchain": "leanprover/lean4:v4.35.0-rc2"
+  },
+  "problems": [
+    {
+      "id": "JSP-000051",
+      "source": "https://www.erdosproblems.com/12; FormalConjectures/ErdosProblems/12.lean at 7d1a8c9912747679d0093f6d1216420c33ee5ffa; Erdos-Sarkozy (1970), pp. 97-98",
+      "requirements": [
+        {
+          "id": "i",
+          "description": "A good infinite set has positive square-root-normalized real liminf.",
+          "targets": [
+            "all-parts",
+            "literal-bridge"
+          ],
+          "coverage": "full",
+          "evidence": "report.md coverage matrix; independent literal-statement bridge in Submission.lean"
+        },
+        {
+          "id": "ii",
+          "description": "No absolute c>0 gives infinitely many strict power-saving cutoffs for every good infinite set.",
+          "targets": [
+            "all-parts",
+            "literal-bridge"
+          ],
+          "coverage": "full",
+          "evidence": "report.md coverage matrix; independent literal-statement bridge in Submission.lean"
+        },
+        {
+          "id": "iii",
+          "description": "Every good infinite set has a summable reciprocal series.",
+          "targets": [
+            "all-parts",
+            "literal-bridge"
+          ],
+          "coverage": "full",
+          "evidence": "report.md coverage matrix; independent literal-statement bridge in Submission.lean"
+        },
+        {
+          "id": "uniform",
+          "description": "The stronger manuscript assertion uniformly bounds all reciprocal sums.",
+          "targets": [
+            "uniform"
+          ],
+          "coverage": "full",
+          "evidence": "report.md coverage matrix; independent literal-statement bridge in Submission.lean"
+        },
+        {
+          "id": "dense",
+          "description": "The dense set and onset may depend on the exponent c in (0,1).",
+          "targets": [
+            "dense"
+          ],
+          "coverage": "full",
+          "evidence": "report.md coverage matrix; independent literal-statement bridge in Submission.lean"
+        }
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "id": "all-parts",
+      "problem": "JSP-000051",
+      "role": "theorem",
+      "module": "Erdos12AllParts",
+      "source": "Erdos12AllParts.lean",
+      "declaration": "Erdos12AllParts.all_parts"
+    },
+    {
+      "id": "uniform",
+      "problem": "JSP-000051",
+      "role": "theorem",
+      "module": "Erdos12AllParts",
+      "source": "Erdos12AllParts.lean",
+      "declaration": "Erdos12AllParts.uniform_reciprocal_bound"
+    },
+    {
+      "id": "dense",
+      "problem": "JSP-000051",
+      "role": "theorem",
+      "module": "Erdos12AllParts",
+      "source": "Erdos12AllParts.lean",
+      "declaration": "Erdos12AllParts.parameterwise_dense"
+    },
+    {
+      "id": "literal-bridge",
+      "problem": "JSP-000051",
+      "role": "bridge",
+      "module": "Submission",
+      "source": "Submission.lean",
+      "declaration": "PrizeTarget.all_parts"
+    }
+  ]
+}

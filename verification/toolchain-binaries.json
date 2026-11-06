@@ -1,0 +1,22 @@
+{
+  "lean": {
+    "sha256": "d1d9c26a539f54fe839d2aa7760bf1ac1dd76a30b26e2c9684bebf2900038fcf",
+    "bytes": 49968
+  },
+  "lake": {
+    "sha256": "d2d63c80ca10bd2cc9557d11d59221b95c6eefb078c9652a11ef887ab8a068a5",
+    "bytes": 51664
+  },
+  "leanchecker": {
+    "sha256": "41662275cb7d624d0f0fdf8cb3dc7d5c15e99b233be3ebec576a5c38df181844",
+    "bytes": 81520
+  },
+  "leanexport": {
+    "sha256": "f533d8829d2f6507816a3c784055bf2eb8f9a7e53a3134affbe320eba5dc27c1",
+    "bytes": 570576
+  },
+  "nanoda_bin": {
+    "sha256": "85daddc584afe0d8fa28e18d4c566219bc3c8ddd8b0d43b90285a8f5b35faf2c",
+    "bytes": 1151616
+  }
+}
